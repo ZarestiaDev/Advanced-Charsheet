@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet_notes" merge="join">
+		<sheetdata>
+			<frame_char name="detailframe" merge="delete" />
+			<string_labeled name="gender" merge="delete" />
+			<string_labeled name="age" merge="delete" />
+			<string_labeled name="height" merge="delete" />
+			<string_labeled name="weight" merge="delete" />
+			<string_labeled name="size" merge="delete" />
+			<string_labeled name="alignment" merge="delete" />
+			<string_labeled name="deity" merge="delete" />
+			
+			<frame_char name="appearanceframe">
+				<bounds>15,0,-189,190</bounds>
+			</frame_char>
+			<frame_char name="languageframe">
+				<bounds>-189,0,160,190</bounds>
+			</frame_char>
+			<frame_char name="notesframe">
+				<bounds>15,190,-29,-2</bounds>
+			</frame_char>
+		</sheetdata>
+	</windowclass>
+</root>

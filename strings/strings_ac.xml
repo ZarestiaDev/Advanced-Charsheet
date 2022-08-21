@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<!-- Char Sheet -->
+	<string name="char_label_miscellaneous">Misc</string>
+	<string name="char_label_abilitymod">Mod</string>
+	<string name="char_label_atk">Atk</string>
+	<string name="char_label_saves">Saves</string>
+	<string name="char_hp_max_label">Max</string>
+	<string name="class_label_bab_short">BAB</string>
+
+	<string name="char_label_itemslot">Slot</string>
+	<string name="char_hp_current_label">Current</string>
+	<string name="char_hp_nonlethal_label">Subdual</string>
+
+	<string name="char_label_advanced_effects">Adv.</string>
+
+	<string name="char_actions_spells">Spells</string>
+	<string name="char_actions_weapons">Weapons</string>
+	<string name="char_actions_items">Items</string>
+	<string name="char_actions_others">Others</string>
+
+	<string name="char_attack_editor">Attacks</string>
+</root>

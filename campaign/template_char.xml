@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<template name="string_main_secondary">
+		<string_labeled>
+			<anchored position="right" offset="10,0" />
+		</string_labeled>
+	</template>
+
+	<template name="button_iadd_creation">
+		<buttoncontrol>
+			<anchored width="20" height="20" />
+			<icon normal="button_add" pressed="button_add_down" />
+		</buttoncontrol>
+	</template>
+
+	<template name="button_chardetails">
+		<buttoncontrol>
+			<anchored width="20" height="20" />
+			<state icon="button_details" pressed="button_details_down" />
+		</buttoncontrol>
+	</template>
+
+	<template name="button_actiontab">
+		<genericcontrol>
+			<anchored width="85" height="20">
+				<top offset="5" />
+				<left parent="leftanchor" anchor="right" relation="relative" offset="15" />
+			</anchored>
+			<frame name="fielddark" offset="7,5,7,5" hidereadonly="true" />
+			<stateframe>
+				<hover name="fieldfocus" offset="7,5,7,5" hidereadonly="true" />
+			</stateframe>
+			<script>
+				function onInit()
+					if labelres then
+						addTextWidget("sheettext", Interface.getString(labelres[1]));
+					end
+				end
+				function onClickDown()
+					window.toggleTabButton(getName());
+				end
+			</script>
+		</genericcontrol>
+	</template>
+
+	<template name="actions_subwindow">
+		<subwindow>
+			<anchored>
+				<top offset="35" />
+				<bottom offset="-2" />
+				<left offset="10" />
+				<right offset="-25" />
+			</anchored>
+		</subwindow>
+	</template>
+
+	<template name="sub_actions_subwindow">
+		<subwindow>
+			<anchored position="over" offset="-12,0">
+				<bottom offset="-50" />
+			</anchored>
+			<activate />
+		</subwindow>
+	</template>
+
+	<!-- Size, offset, and minor anchoring changes -->
+	<template name="number_charabilityscore">
+		<basicnumber>
+			<anchored position="belowleft" offset="0,12" width="36" height="24" />
+			<default>10</default>
+		</basicnumber>
+	</template>
+	
+	<template name="string_charabilitylabel">
+		<label>
+			<anchored position="lefthigh" width="39" height="20" offset="0,2" />
+			<static />
+		</label>
+	</template>
+	
+	<template name="number_charabilitydamage">
+		<basicnumber>
+			<anchored position="right" offset="20,0" width="36 " />
+			<hideonvalue value="0" />
+			<script>
+				function onValueChanged()
+					local nTarget = DB.getValue(window.getDatabaseNode(), "abilities." .. target[1] .. ".score", 0);
+					if getValue() &gt; nTarget then
+						setValue(nTarget);
+					end
+				end
+			</script>
+		</basicnumber>
+	</template>
+	
+	<template name="number_charcombatmod">
+		<basicnumber>
+			<anchored position="right" offset="12,0" width="36" />
+			<displaysign />
+		</basicnumber>
+	</template>
+	
+	<template name="cycler_charcombatability">
+		<cycler_charability>
+			<anchored position="righthigh" offset="12,0" height="20" width="36" /> 
+		</cycler_charability>
+	</template>
+	
+	<template name="number_charcombatabilitymod">
+		<number_charabilitymod>
+			<anchored position="right" offset="6,0" width="36" /> 
+		</number_charabilitymod>
+	</template>
+	
+	<template name="number_charabilitybonus">
+		<number_chartotal>
+			<anchored position="right" offset="20,0" width="36" />
+			<hideonvalue value="0" />
+			<rollable />
+			<displaysign />
+			<modifiersize>mini</modifiersize>
+			<script>
+				function onSourceUpdate()
+					local nodeWin = window.getDatabaseNode();
+					local nCurrentScore = DB.getValue(nodeWin, "abilities." .. target[1] .. ".score", 10);
+					
+					if DataCommon.isPFRPG() then
+						local nBonus = math.floor((nCurrentScore - 10) / 2) + getModifier();
+						
+						local nDamage = DB.getValue(nodeWin, "abilities." .. target[1] .. ".damage", 0);
+						if nDamage &gt; 0 then
+							nBonus = nBonus - math.floor(nDamage / 2);
+						elseif nDamage &lt; 0 then
+							nBonus = nBonus - math.ceil(nDamage / 2);
+						end
+
+						setValue(nBonus);
+					else
+						nCurrentScore = nCurrentScore - DB.getValue(nodeWin, "abilities." .. target[1] .. ".damage", 0);
+						setValue(math.floor((nCurrentScore - 10) / 2) + getModifier());
+					end
+				end
+
+				function onInit()
+					addSource("abilities." .. target[1] .. ".score");
+					addSource("abilities." .. target[1] .. ".damage");
+
+					super.onInit();
+				end
+
+				function action(draginfo)
+					local rActor = ActorManager.resolveActor(window.getDatabaseNode());
+					ActionAbility.performRoll(draginfo, rActor, self.target[1]);
+					return true;
+				end
+				
+				function onDragStart(button, x, y, draginfo)
+					return action(draginfo);
+				end
+					
+				function onDoubleClick(x,y)
+					return action();
+				end
+			</script>
+		</number_chartotal>
+	</template>
+	
+	<template name="list_charweapon">
+		<windowlist>
+			<datasource>.weaponlist</datasource>
+			<sortby><control>name</control></sortby>
+			<script file="campaign/scripts/char_weaponlist.lua" />
+		</windowlist>
+	</template>
+	
+	<template name="button_charmainskill">
+		<button_roll>
+			<anchored to="anchor_charmainskill">
+				<left anchor="right" relation="relative" offset="22" />
+				<top />
+			</anchored>
+			<script>
+				local sSkill;
+				
+				function onInit()
+					sSkill = Interface.getString(skill[1]);
+					
+					if sSkill then
+						setTooltipText(sSkill .. " " .. Interface.getString("char_tooltip_skillcheck"));
+					end
+				end
+				
+				function action(draginfo)
+					if sSkill then
+						local nodeChar = window.getDatabaseNode();
+						local rActor = ActorManager.resolveActor(nodeChar);
+						local nValue = CharManager.getSkillValue(rActor, sSkill);
+						ActionSkill.performRoll(draginfo, rActor, sSkill, nValue);
+					end
+				end
+				
+				function onButtonPress()
+					action();
+				end
+				
+				function onDragStart(button, x, y, draginfo)
+					action(draginfo);
+					return true;
+				end
+			</script>
+		</button_roll>
+	</template>
+
+	 <!-- Change height to compensate portrait changes -->
+	 <template name="sub_charsheet_overview">
+		<subwindow>
+			<bounds>15,20,-30,162</bounds>
+			<activate />
+			<fastinit />
+			<class>charsheet_overview</class>
+		</subwindow>
+	</template>
+	<template name="sub_charsheet">
+		<subwindow>
+			<bounds>0,175,-1,-20</bounds>
+		</subwindow>
+	</template>
+</root>
