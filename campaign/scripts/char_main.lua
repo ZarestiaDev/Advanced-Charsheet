@@ -3,8 +3,13 @@
 -- attribution and copyright information.
 --
 
+LoadedExtensions = {}
+
 function onInit()
 	onSystemChanged();
+
+	onExtensionsLoaded();
+	onAdvancedEffects();
 end
 
 function onHealthChanged()
@@ -44,4 +49,17 @@ function onSystemChanged()
 
 	perception.setVisible(bPFMode);
 	label_perception.setVisible(bPFMode);
+end
+
+function onExtensionsLoaded()
+	for index, name in pairs(Extension.getExtensions()) do
+		LoadedExtensions[name] = index;
+	end
+end
+
+function onAdvancedEffects()
+	if LoadedExtensions["FG-PFRPG-Advanced-Effects"] then
+		button_char_advanced_effects.setVisible(true);
+		char_advanced_effects_label.setVisible(true);
+	end
 end

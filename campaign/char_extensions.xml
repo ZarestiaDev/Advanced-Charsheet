@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+    <windowclass name="advanced_effects_editor_custom" >
+        <frame>charsheethelper</frame>
+		<placement>
+			<size width="440" height="210" />
+		</placement>
+		<sizelimits>
+            <minimum width="440" height="210" />
+			<dynamic />
+        </sizelimits>
+        <sheetdata>
+            <windowtitlebar_char name="title">
+				<prefix>char_effects_editor</prefix>
+			</windowtitlebar_char>
+			<anchor_title_charsheethelper name="contentanchor" />
+            
+            <subwindow name="ae_custom">
+                <anchored>
+                    <top parent="contentanchor" anchor="bottom" />
+                    <left offset="18" />
+                    <right offset="-20" />
+                    <bottom offset="-24" />
+                </anchored>
+                <class>advanced_effects_subwindowf</class>
+                <activate />
+            </subwindow>
+
+            <close_charsheethelper />
+			<resize_charsheethelper />
+        </sheetdata>
+    </windowclass>
+</root>

@@ -255,7 +255,7 @@
 			</label>
 
 			<number_chartotalac name="ac" source="ac.totals.general">
-				<anchored to="armorclass_label" position="righthigh" offset="24,-2" width="36" height="24" />
+				<anchored to="armorclass_label" position="righthigh" offset="19,-2" width="36" height="24" />
 			</number_chartotalac>
 			<number_charflatfootedac name="flatfootedac" source="ac.totals.flatfooted">
 				<anchored to="ac" position="righthigh" offset="20,0" width="36" height="24" />
@@ -292,7 +292,7 @@
 				<anchored to="charmiscframe" position="insidetopleft" offset="10,28" />
 				<script>
 					function onButtonPress()
-						Interface.openWindow("charsheet_ini_editor", window.getDatabaseNode());
+						Interface.openWindow("charsheet_misc_editor", window.getDatabaseNode());
 					end
 				</script>
 			</button_chardetails>
@@ -329,13 +329,15 @@
 				<anchored to="baseattackbonus" position="righthigh" offset="28,4" />
 				<script>
 					function onButtonPress()
-						Interface.openWindow("charsheet_effect_editor", window.getDatabaseNode());
+						Interface.openWindow("advanced_effects_editor_custom", window.getDatabaseNode());
 					end
 				</script>
+				<invisible />
 			</button_chardetails>
 			<label_fieldtop name="char_advanced_effects_label">
 				<anchored to="button_char_advanced_effects" offset="0,5" />
 				<static textres="char_label_advanced_effects" />
+				<invisible />
 			</label_fieldtop>
 
 			<!-- Speed -->
@@ -399,7 +401,7 @@
 			</button_charmainskill>
 			<label_charmainskill name="label_perception">
 				<anchored to="perception" />
-				<static textres="char_label_skillperception" />
+				<static textres="char_label_skillperception_short" />
 				<invisible />
 			</label_charmainskill>
 			<string_labeled name="senses">
@@ -442,7 +444,7 @@
 			</label_fieldtop>
 			<label_fieldtop name="ranged_label">
 				<anchored to="rangedmainattackbonus" offset="0,2" />
-				<static textres="char_label_ranged" />
+				<static textres="char_label_ranged_short" />
 			</label_fieldtop>
 			<label_fieldtop name="label_grapple">
 				<anchored to="grappleattackbonus" offset="0,2" />
@@ -535,6 +537,12 @@
 				meleestat.onValueChanged();
 				rangedstat.onValueChanged();
 				grapplestat.onValueChanged();
+
+				if DataCommon.isPFRPG() then
+					label_grapple.setValue(Interface.getString("cmb"));
+				else
+					label_grapple.setValue(Interface.getString("grapple"));
+				end
 			end
 		</script>
 		<sheetdata>
@@ -656,6 +664,7 @@
 				<anchored to="meleemisc" />
 				<static textres="char_label_combatmisc" />
 			</label_fieldtop>
+			
 			<close_charsheethelper />
 			<resize_charsheethelper />
 		</sheetdata>
@@ -737,10 +746,10 @@
 	<windowclass name="charsheet_save_editor">
 		<frame>charsheethelper</frame>
 		<placement>
-			<size width="425" height="260" />
+			<size width="425" height="190" />
 		</placement>
 		<sizelimits>
-			<minimum width="425" height="260" />
+			<minimum width="425" height="190" />
 			<dynamic />
 		</sizelimits>
 		<script>
@@ -976,43 +985,6 @@
 				<static textres="char_label_combatmisc" />
 			</label_fieldtop>
 			
-			<!-- Defenses - Spell -->
-			<frame_char name="srframe">
-				<anchored to="contentanchor" height="67">
-					<top anchor="bottom" relation="relative" offset="0" />
-					<left />
-					<right />
-				</anchored>
-			</frame_char>
-			
-			<number_charsr name="srfinal" source="defenses.sr.total">
-				<anchored to="srframe" position="insidetopleft" offset="105,26" width="32" height="20" />
-				<hideonvalue>0</hideonvalue>
-			</number_charsr>
-			<label name="srfinal_label">
-				<anchored to="srframe" position="insidetopleft" offset="20,26" width="80" />
-				<static textres="sr" />
-			</label>
-			<label_fieldtop name="srtotal_label">
-				<anchored to="srfinal" />
-				<static textres="char_label_combattotal" />
-			</label_fieldtop>
-			<basicnumber name="srbase" source="defenses.sr.base">
-				<anchored to="srfinal" position="right" offset="15,0" width="34"/>
-				<hideonvalue>0</hideonvalue>
-			</basicnumber>
-			<label_fieldtop name="srbase_label">
-				<anchored to="srbase" />
-				<static textres="char_label_combatbase" />
-			</label_fieldtop>
-			<basicnumber name="srmisc" source="defenses.sr.misc">
-				<anchored to="srbase" position="right" offset="12,0" width="34" />
-				<hideonvalue>0</hideonvalue>
-			</basicnumber>
-			<label_fieldtop name="srmisc_label">
-				<anchored to="srmisc" />
-				<static textres="char_label_combatmisc" />
-			</label_fieldtop>
 			<close_charsheethelper />
 			<resize_charsheethelper />
 		</sheetdata>
@@ -1020,13 +992,10 @@
 	
 	<windowclass name="charsheet_ac_editor">
 		<frame>charsheethelper</frame>
-		<placement>
-			<size width="620" height="210" />
-		</placement>
 		<sizelimits>
-			<minimum width="620" height="210" />
+			<minimum width="620" height="270" />
 			<dynamic />
-		</sizelimits>
+		</sizelimits> 
 		<script>
 			local bInitialized = false;
 
@@ -1041,6 +1010,7 @@
 				acstat2.onValueChanged();
 				cmdbase.onValueChanged();
 				cmdstat.onValueChanged();
+
 				onSystemChanged();
 			end
 
@@ -1064,6 +1034,12 @@
 				cmdstatmod.setVisible(bPFMode);
 				cmdbase.setVisible(bPFMode);
 				cmdbasemod.setVisible(bPFMode);
+
+				if bPFMode then
+					acframe.setAnchoredHeight("210");
+				else
+					acframe.setAnchoredHeight("140");
+				end
 			end
 		</script>
 		<sheetdata>
@@ -1073,10 +1049,9 @@
 			<anchor_title_charsheethelper name="contentanchor" />
 			<!-- Defenses - Armor -->
 			<frame_char name="acframe">
-				<anchored to="contentanchor" height="140">
+				<anchored to="contentanchor" height="140" width="590">
 					<top anchor="bottom" relation="relative" offset="0" />
 					<left />
-					<right />
 				</anchored>
 			</frame_char>
 
@@ -1319,18 +1294,19 @@
 				<anchored to="acmisc" />
 				<static textres="char_label_combatmisc" />
 			</label_fieldtop>
+
 			<close_charsheethelper />
 			<resize_charsheethelper />
 		</sheetdata>
 	</windowclass>
 	
-	<windowclass name="charsheet_ini_editor">
+	<windowclass name="charsheet_misc_editor">
 		<frame>charsheethelper</frame>
 		<placement>
-			<size width="250" height="150" />
+			<size width="250" height="215" />
 		</placement>
 		<sizelimits>
-			<minimum width="250" height="150" />
+			<minimum width="250" height="215" />
 			<dynamic />
 		</sizelimits>
 		<script>
@@ -1392,6 +1368,45 @@
 				<anchored to="initiativemiscbonus" />
 				<static textres="char_label_combatmisc" />
 			</label_fieldtop>
+
+			<!-- Defenses - Spell -->
+			<frame_char name="srframe">
+				<anchored to="contentanchor" height="65">
+					<top anchor="bottom" relation="relative" offset="0" />
+					<left />
+					<right />
+				</anchored>
+			</frame_char>
+			
+			<number_charsr name="srfinal" source="defenses.sr.total">
+				<anchored to="srframe" position="insidetopleft" offset="47,26" width="32" height="20" />
+				<hideonvalue>0</hideonvalue>
+			</number_charsr>
+			<label name="srfinal_label">
+				<anchored to="srframe" position="insidetopleft" offset="20,26" width="30" />
+				<static textres="sr" />
+			</label>
+			<label_fieldtop name="srtotal_label">
+				<anchored to="srfinal" />
+				<static textres="char_label_combattotal" />
+			</label_fieldtop>
+			<basicnumber name="srbase" source="defenses.sr.base">
+				<anchored to="srfinal" position="right" offset="15,0" width="34"/>
+				<hideonvalue>0</hideonvalue>
+			</basicnumber>
+			<label_fieldtop name="srbase_label">
+				<anchored to="srbase" />
+				<static textres="char_label_combatbase" />
+			</label_fieldtop>
+			<basicnumber name="srmisc" source="defenses.sr.misc">
+				<anchored to="srbase" position="right" offset="12,0" width="34" />
+				<hideonvalue>0</hideonvalue>
+			</basicnumber>
+			<label_fieldtop name="srmisc_label">
+				<anchored to="srmisc" />
+				<static textres="char_label_combatmisc" />
+			</label_fieldtop>
+
 			<close_charsheethelper />
 			<resize_charsheethelper />
 		</sheetdata>
