@@ -6,8 +6,18 @@
 local resetSpellsOriginal;
 local resetPreparedOriginal;
 local tSpellsets = { "spellset", "itemspellset", "otherspellset" };
+local LoadedExtensions = {};
 
 function onInit()
+    -- check first if we want to rather use Kelrugem's SpellManager implementation
+    for index, name in pairs(Extension.getExtensions()) do
+		LoadedExtensions[name] = index;
+	end
+
+    if LoadedExtensions["Extended-automation-and-overlays"] then
+        return;
+    end
+
     resetSpellsOriginal = SpellManager.resetSpells;
     SpellManager.resetSpells = resetSpells;
 

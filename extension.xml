@@ -4,7 +4,7 @@
 	<properties>
 		<name>Feature: Advanced Charsheet</name>
 		<version>0.1</version>
-		<loadorder>1</loadorder>
+		<loadorder>10</loadorder>
 		<description>
 			<text>Revisited Character Sheet</text>
 			<website></website>
