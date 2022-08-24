@@ -21,6 +21,9 @@
 	<announcement text="3.5E/PFRPG Advanced Charsheet - v0.1 \rby Zarestia, 2022" font="emotefont" />
 
 	<base>
+	<!-- High-Level Scripts -->
+		<script name="SpellManagerAC" file="scripts/manager_spell_ac.lua" />
+
 	<!-- Campaign -->
 		<!-- Reworked record_char -->
 		<includefile source="campaign/record_char.xml" />
