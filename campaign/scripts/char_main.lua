@@ -10,6 +10,7 @@ function onInit()
 
 	onExtensionsLoaded();
 	onAdvancedEffects();
+	onLiveHP();
 end
 
 function onHealthChanged()
@@ -61,5 +62,11 @@ function onAdvancedEffects()
 	if LoadedExtensions["FG-PFRPG-Advanced-Effects"] then
 		button_char_advanced_effects.setVisible(true);
 		char_advanced_effects_label.setVisible(true);
+	end
+end
+
+function onLiveHP()
+	if LoadedExtensions["FG-PFRPG-Live-Hitpoints"] then
+		button_health.setVisible(true);
 	end
 end
