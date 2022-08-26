@@ -137,14 +137,14 @@
 			<genericcontrol name="leftanchor">
 				<anchored to="hpframe" position="insidetopleft" width="0" height="0">
 					<top offset="1" />
-					<left />
+					<left offset="10" />
 				</anchored>
 			</genericcontrol>
 
 			<button_chardetails name="button_health">
 				<anchored>
 					<top offset="26" />
-					<left parent="leftanchor" anchor="right" relation="relative" offset="10" />
+					<left parent="leftanchor" anchor="right" relation="relative" offset="0" />
 				</anchored>
 				<script>
 					function onButtonPress()

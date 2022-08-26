@@ -4,6 +4,7 @@
 --
 
 LoadedExtensions = {}
+NODETOTALHP = "hp.total";
 
 function onInit()
 	onSystemChanged();
@@ -18,7 +19,7 @@ function onHealthChanged()
 	local rActor = ActorManager.resolveActor(nodeChar);
 	local sColor = ActorHealthManager.getHealthColor(rActor);
 
-	local nHPMax = DB.getValue(nodeChar, "hp.total", 0);
+	local nHPMax = DB.getValue(nodeChar, NODETOTALHP, 0);
 	local nHPWounds = DB.getValue(nodeChar, "hp.wounds", 0);
 	local nHPCurrent = nHPMax - nHPWounds;
 	DB.setValue(nodeChar, "hp.current", "number", nHPCurrent);
@@ -68,5 +69,8 @@ end
 function onLiveHP()
 	if LoadedExtensions["FG-PFRPG-Live-Hitpoints"] then
 		button_health.setVisible(true);
+		livehitpoints.setVisible(false);
+		
+		NODETOTALHP = "livehp.total";
 	end
 end
