@@ -4,7 +4,7 @@
 	<properties>
 		<name>Feature: Advanced Charsheet</name>
 		<version>0.1</version>
-		<loadorder>50</loadorder>
+		<loadorder>55</loadorder>
 		<description>
 			<text>Revisited Character Sheet</text>
 			<website></website>
@@ -17,6 +17,12 @@
 			<name>PFRPG</name>
 		</ruleset>
 	</properties>
+
+	<!-- 
+		Load Orders
+		Attack Modifier: 51
+		LiveHP: 60
+	-->
 
 	<announcement text="3.5E/PFRPG Advanced Charsheet - v0.1 \rby Zarestia, 2022" font="emotefont" />
 

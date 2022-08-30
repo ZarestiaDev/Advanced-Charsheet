@@ -1,5 +1,10 @@
+LoadedExtensions = {};
+
 function onInit()
 	toggleTabButton("subspells_button");
+
+	onExtensionsLoaded();
+	onAttackModifiers();
 end
 
 function getTabNames()
@@ -26,4 +31,22 @@ function updateTabStyle(sTabName, sFrame, bVisible)
 	end
 	self[sTabName].setVisible(bVisible);
 	self[sTabName .. "_button"].setFrame(sFrame, 7,5,7,5);
+end
+
+function onExtensionsLoaded()
+	for index, name in pairs(Extension.getExtensions()) do
+		LoadedExtensions[name] = index;
+	end
+end
+
+function onAttackModifiers()
+	if LoadedExtensions["Attack Modifiers"] then
+		toggle_actions_am.setVisible(true);
+		actions_am.setVisible(true);
+
+		subspells.setAnchor("top", "actions_am", "bottom", "", 22);
+		subweapons.setAnchor("top", "actions_am", "bottom", "", 22);
+		subitems.setAnchor("top", "actions_am", "bottom", "", 22);
+		subothers.setAnchor("top", "actions_am", "bottom", "", 22);
+	end
 end
