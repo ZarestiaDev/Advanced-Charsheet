@@ -10,7 +10,7 @@
 	<string name="char_label_miscellaneous">Misc</string>
 	<string name="char_label_abilitymod">Mod</string>
 	<string name="char_label_atk">Atk</string>
-	<string name="char_label_saves">Saves</string>
+	<string name="char_label_save">Save</string>
 	<string name="char_hp_max_label">Max</string>
 	<string name="class_label_bab_short">BAB</string>
 	<string name="char_label_skillperception_short">Perc.</string>
@@ -27,6 +27,5 @@
 	<string name="char_actions_items">Items</string>
 	<string name="char_actions_others">Others</string>
 
-	<string name="char_attack_editor">Attacks</string>
 	<string name="char_effects_editor">Advanced Effects</string>
 </root>

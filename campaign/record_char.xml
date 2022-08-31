@@ -14,40 +14,6 @@
             <minimum width="615" height="760" />
 			<dynamic />
         </sizelimits>
-		<sheetdata>
-			<sub_charsheet name="combat" merge="delete" />
-
-			<tabs_charsheet name="tabs" merge="replace">
-				<tab>
-					<icon>tab_main</icon>
-					<subwindow>main</subwindow>
-				</tab>
-				<tab>
-					<icon>tab_skills</icon>
-					<subwindow>skills</subwindow>
-				</tab>
-				<tab>
-					<icon>tab_abilities</icon>
-					<subwindow>abilities</subwindow>
-				</tab>
-				<tab>
-					<icon>tab_inventory</icon>
-					<subwindow>inventory</subwindow>
-				</tab>
-				<tab>
-					<icon>tab_notes</icon>
-					<subwindow>notes</subwindow>
-				</tab>
-				<tab>
-					<icon>tab_actions</icon>
-					<subwindow>actions</subwindow>
-				</tab>
-				<activate>1</activate>
-			</tabs_charsheet>
-
-			<resize_charsheet />
-			<close_charsheet />
-		</sheetdata>
 	</windowclass>
 
 	<windowclass name="charsheet_overview">
