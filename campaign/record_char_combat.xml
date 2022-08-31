@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet_combat" merge="join">
+        <sheetdata>
+			<frame_char name="acframe">
+				<bounds>15,0,480,210</bounds>
+			</frame_char>
+
+            <frame_char name="saveframe">
+				<bounds>15,210,350,120</bounds>
+			</frame_char>
+
+            <frame_char name="attackframe">
+				<bounds>15,330,350,150</bounds>
+			</frame_char>
+
+            <frame_char name="srframe">
+				<bounds>365,210,130,90</bounds>
+			</frame_char>
+
+            <frame_char name="speedframe">
+				<bounds>365,300,130,90</bounds>
+			</frame_char>
+
+            <frame_char name="initiativeframe">
+				<bounds>365,390,130,90</bounds>
+			</frame_char>
+        </sheetdata>
+    </windowclass>
+</root>
