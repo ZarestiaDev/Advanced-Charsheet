@@ -7,29 +7,30 @@
 
 <root>
 	<windowclass name="charsheet_combat" merge="join">
+		<script file="campaign/scripts/char_combat.lua" />
         <sheetdata>
 			<frame_char name="acframe">
-				<bounds>15,0,480,210</bounds>
+				<bounds>15,0,550,210</bounds>
 			</frame_char>
 
             <frame_char name="saveframe">
-				<bounds>15,210,350,120</bounds>
+				<bounds>15,210,380,120</bounds>
 			</frame_char>
 
             <frame_char name="attackframe">
-				<bounds>15,330,350,150</bounds>
+				<bounds>15,330,380,150</bounds>
 			</frame_char>
 
             <frame_char name="srframe">
-				<bounds>365,210,130,90</bounds>
+				<bounds>395,210,130,90</bounds>
 			</frame_char>
 
             <frame_char name="speedframe">
-				<bounds>365,300,130,90</bounds>
+				<bounds>395,300,130,90</bounds>
 			</frame_char>
 
             <frame_char name="initiativeframe">
-				<bounds>365,390,130,90</bounds>
+				<bounds>395,390,130,90</bounds>
 			</frame_char>
         </sheetdata>
     </windowclass>
