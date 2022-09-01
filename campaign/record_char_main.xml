@@ -243,11 +243,11 @@
 			</frame_char>
 
 			<label name="armorclass_label">
-				<anchored to="acframe" position="insidetopleft" offset="10,28" />
+				<anchored to="acframe" position="insidetopleft" offset="15,26" />
 				<static textres="char_label_combatac" />
 			</label>
 			<number_chartotalac name="ac" source="ac.totals.general">
-				<anchored to="armorclass_label" position="righthigh" offset="19,-2" width="36" height="24" />
+				<anchored to="armorclass_label" position="righthigh" offset="15,-2" width="36" height="24" />
 			</number_chartotalac>
 			<number_charflatfootedac name="flatfootedac" source="ac.totals.flatfooted">
 				<anchored to="ac" position="righthigh" offset="20,0" width="36" height="24" />
@@ -281,12 +281,12 @@
 				<bounds>236,172,-29,72</bounds>
 			</frame_char>
 			<label name="misc_label">
-				<anchored to="charmiscframe" position="insidetopleft" offset="10,28" />
+				<anchored to="charmiscframe" position="insidetopleft" offset="15,26" />
 				<static textres="char_label_miscellaneous" />
 			</label>
 
 			<number_charinit name="initiative" source="initiative.total">
-				<anchored to="misc_label" position="righthigh" offset="63,-2" width="36" height="24" />
+				<anchored to="misc_label" position="righthigh" offset="60,-2" width="36" height="24" />
 			</number_charinit>
 			<number_charsr name="spellresistance" source="defenses.sr.total">
 				<anchored to="initiative" position="righthigh" offset="20,0" width="36" height="24" />
@@ -330,11 +330,11 @@
 			</frame_char>
 
 			<label name="speedfinal_label">
-				<anchored to="speedframe" position="insidetopleft" offset="10,28" />
+				<anchored to="speedframe" position="insidetopleft" offset="15,28" />
 				<static textres="char_label_speed" />
 			</label>
 			<number_charspeed name="speedfinal" source="speed.final">
-				<anchored to="speedfinal_label" position="righthigh" offset="56,-2" width="36" height="24" />
+				<anchored to="speedfinal_label" position="righthigh" offset="50,-2" width="36" height="24" />
 			</number_charspeed>
 			<string_labeled name="speedspecial" source="speed.special">
 				<anchored to="speedfinal" position="righthigh" offset="10,9" width="160" height="20" />
@@ -394,11 +394,11 @@
 			</frame_char>
 
 			<label name="atk">
-				<anchored to="combatframe" position="insidetopleft" offset="10,26" />
+				<anchored to="combatframe" position="insidetopleft" offset="15,26" />
 				<static textres="char_label_atk" />
 			</label>
 			<number_charmeleetotal name="meleemainattackbonus" source="attackbonus.melee.total">
-				<anchored to="atk" position="righthigh" offset="24,0" width="36" height="24" />
+				<anchored to="atk" position="righthigh" offset="20,0" width="36" height="24" />
 			</number_charmeleetotal>
 			<number_charrangedtotal name="rangedmainattackbonus" source="attackbonus.ranged.total">
 				<anchored to="meleemainattackbonus" position="righthigh" offset="20,0" width="36" height="24" />
@@ -426,11 +426,11 @@
 			</frame_char>
 
 			<label name="save">
-				<anchored to="saveframe" position="insidetopleft" offset="10,26" />
+				<anchored to="saveframe" position="insidetopleft" offset="15,26" />
 				<static textres="char_label_save" />
 			</label>
 			<number_charsavefort name="fortitude" source="saves.fortitude.total">
-				<anchored to="save" position="righthigh" offset="24,0" width="36" height="24" />
+				<anchored to="save" position="righthigh" offset="17,0" width="36" height="24" />
 			</number_charsavefort>
 			<number_charsaveref name="reflex" source="saves.reflex.total">
 				<anchored to="fortitude" position="righthigh" offset="20,0" width="36" height="24" />
