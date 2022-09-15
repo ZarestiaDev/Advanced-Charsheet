@@ -13,7 +13,7 @@
 				<bounds>15,28,-29,-2</bounds>
 			</frame_char>
 
-			<subwindow name="actions_am">
+			<!-- <subwindow name="actions_am">
 				<anchored height="115">
 					<top offset="35" />
 					<left offset="10" />
@@ -23,7 +23,7 @@
 				<activate />
 				<fastinit />
 				<invisible />
-			</subwindow>
+			</subwindow> -->
 			
 			<actions_subwindow name="subspells">
 				<class>char_spells</class>

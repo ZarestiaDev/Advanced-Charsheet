@@ -131,7 +131,7 @@
 
 			<!-- Health -->
 			<frame_char name="hpframe">
-				<bounds>236,0,-29,100</bounds>
+				<bounds>236,0,-29,116</bounds>
 			</frame_char>
 
 			<genericcontrol name="leftanchor">
@@ -233,13 +233,17 @@
 
 			<!-- Damage Reduction -->
 			<string_labeled name="dr" source="defenses.damagereduction">
-				<anchored to="hpframe" position="insidebottomleft" offset="15,21" width="316" height="20" />
+				<anchored to="hpframe" position="insidebottomleft" offset="15,42" width="316" height="20" />
 				<labelres>char_label_dr</labelres>
+			</string_labeled>
+			<string_labeled name="resistances" source="defenses.resistances">
+				<anchored to="dr" position="belowleft" offset="0,5" width="316" height="20" />
+				<labelres>char_label_resistances</labelres>
 			</string_labeled>
 
 			<!-- Armor Class -->
 			<frame_char name="acframe">
-				<bounds>236,100,-29,72</bounds>
+				<bounds>236,116,-29,64</bounds>
 			</frame_char>
 
 			<label name="armorclass_label">
@@ -247,7 +251,7 @@
 				<static textres="char_label_combatac" />
 			</label>
 			<number_chartotalac name="ac" source="ac.totals.general">
-				<anchored to="armorclass_label" position="righthigh" offset="18,-2" width="36" height="24" />
+				<anchored to="hp" position="belowleft" offset="0,93" width="36" height="24" />
 			</number_chartotalac>
 			<number_charflatfootedac name="flatfootedac" source="ac.totals.flatfooted">
 				<anchored to="ac" position="righthigh" offset="20,0" width="36" height="24" />
@@ -278,7 +282,7 @@
 
 			<!-- Misc -->
 			<frame_char name="charmiscframe">
-				<bounds>236,172,-29,72</bounds>
+				<bounds>236,180,-29,64</bounds>
 			</frame_char>
 			<label name="misc_label">
 				<anchored to="charmiscframe" position="insidetopleft" offset="15,26" />
@@ -286,7 +290,7 @@
 			</label>
 
 			<number_charinit name="initiative" source="initiative.total">
-				<anchored to="misc_label" position="righthigh" offset="62,-2" width="36" height="24" />
+				<anchored to="ac" position="belowleft" offset="0,40" width="36" height="24" />
 			</number_charinit>
 			<number_charsr name="spellresistance" source="defenses.sr.total">
 				<anchored to="initiative" position="righthigh" offset="20,0" width="36" height="24" />
@@ -326,27 +330,31 @@
 
 			<!-- Speed -->
 			<frame_char name="speedframe">
-				<bounds>236,244,-29,72</bounds>
+				<bounds>236,244,-29,64</bounds>
 			</frame_char>
 
 			<label name="speedfinal_label">
-				<anchored to="speedframe" position="insidetopleft" offset="15,28" />
+				<anchored to="speedframe" position="insidetopleft" offset="15,26" />
 				<static textres="char_label_speed" />
 			</label>
 			<number_charspeed name="speedfinal" source="speed.final">
-				<anchored to="speedfinal_label" position="righthigh" offset="52,-2" width="36" height="24" />
+				<anchored to="initiative" position="belowleft" offset="0,40" width="36" height="24" />
 			</number_charspeed>
 			<string_labeled name="speedspecial" source="speed.special">
-				<anchored to="speedfinal" position="righthigh" offset="10,9" width="160" height="20" />
+				<anchored to="speedframe" height="20">
+					<top offset="26" />
+					<left parent="speedfinal" anchor="right" offset="8" />
+					<right offset="-15" />
+				</anchored>
 				<labelres>char_label_speedspecial</labelres>
 			</string_labeled>
 
 			<!-- Senses -->
 			<frame_char name="sensesframe">
-				<bounds>236,316,-29,72</bounds>
+				<bounds>236,308,-29,64</bounds>
 			</frame_char>
 			<genericcontrol name="anchor_charmainskill">
-				<anchored to="sensesframe" position="insidetopleft" offset="0,28" width="0" height="20" />
+				<anchored to="sensesframe" position="insidetopleft" offset="0,24" width="0" height="20" />
 			</genericcontrol>
 			<button_charmainskill name="spot">
 				<skill>skill_value_spot</skill>
@@ -380,7 +388,7 @@
 			</label_charmainskill>
 			<string_labeled name="senses">
 				<anchored to="sensesframe" height="20">
-					<top offset="32" />
+					<top offset="26" />
 					<left parent="anchor_charmainskill" anchor="right" relation="relative" offset="20" />
 					<right offset="-15" />
 				</anchored>
@@ -390,7 +398,7 @@
 
 			<!-- Attacks -->
 			<frame_char name="combatframe">
-				<bounds>15,244,220,72</bounds>
+				<bounds>15,244,220,64</bounds>
 			</frame_char>
 
 			<label name="atk">
@@ -398,7 +406,7 @@
 				<static textres="char_label_atk" />
 			</label>
 			<number_charmeleetotal name="meleemainattackbonus" source="attackbonus.melee.total">
-				<anchored to="atk" position="righthigh" offset="19,0" width="36" height="24" />
+				<anchored to="charisma" position="belowleft" offset="0,40" width="36" height="24" />
 			</number_charmeleetotal>
 			<number_charrangedtotal name="rangedmainattackbonus" source="attackbonus.ranged.total">
 				<anchored to="meleemainattackbonus" position="righthigh" offset="20,0" width="36" height="24" />
@@ -422,7 +430,7 @@
 
 			<!-- Saves -->
 			<frame_char name="saveframe">
-				<bounds>15,316,220,72</bounds>
+				<bounds>15,308,220,64</bounds>
 			</frame_char>
 
 			<label name="save">
@@ -430,7 +438,7 @@
 				<static textres="char_label_save" />
 			</label>
 			<number_charsavefort name="fortitude" source="saves.fortitude.total">
-				<anchored to="save" position="righthigh" offset="11,0" width="36" height="24" />
+				<anchored to="meleemainattackbonus" position="belowleft" offset="0,40" width="36" height="24" />
 			</number_charsavefort>
 			<number_charsaveref name="reflex" source="saves.reflex.total">
 				<anchored to="fortitude" position="righthigh" offset="20,0" width="36" height="24" />
