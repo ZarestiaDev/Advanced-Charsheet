@@ -28,6 +28,7 @@
 
 	<base>
 	<!-- High-Level Scripts -->
+		<script name="CompManagerAC" file="scripts/manager_compatibility.lua" />
 		<script name="SpellManagerAC" file="scripts/manager_spell_ac.lua" />
 
 	<!-- Campaign -->

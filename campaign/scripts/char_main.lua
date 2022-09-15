@@ -3,13 +3,11 @@
 -- attribution and copyright information.
 --
 
-LoadedExtensions = {}
 NODETOTALHP = "hp.total";
 
 function onInit()
 	onSystemChanged();
 
-	onExtensionsLoaded();
 	onAdvancedEffects();
 	onLiveHP();
 end
@@ -53,21 +51,15 @@ function onSystemChanged()
 	label_perception.setVisible(bPFMode);
 end
 
-function onExtensionsLoaded()
-	for index, name in pairs(Extension.getExtensions()) do
-		LoadedExtensions[name] = index;
-	end
-end
-
 function onAdvancedEffects()
-	if LoadedExtensions["FG-PFRPG-Advanced-Effects"] then
+	if CompManagerAC.EXTENSIONS["FG-PFRPG-Advanced-Effects"] then
 		button_char_advanced_effects.setVisible(true);
 		char_advanced_effects_label.setVisible(true);
 	end
 end
 
 function onLiveHP()
-	if LoadedExtensions["FG-PFRPG-Live-Hitpoints"] then
+	if CompManagerAC.EXTENSIONS["FG-PFRPG-Live-Hitpoints"] then
 		button_health.setVisible(true);
 		livehitpoints.setVisible(false);
 		

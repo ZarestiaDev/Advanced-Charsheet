@@ -1,9 +1,6 @@
-LoadedExtensions = {};
-
 function onInit()
 	toggleTabButton("subspells_button");
 
-	onExtensionsLoaded();
 	onAttackModifiers();
 end
 
@@ -33,14 +30,8 @@ function updateTabStyle(sTabName, sFrame, bVisible)
 	self[sTabName .. "_button"].setFrame(sFrame, 7,5,7,5);
 end
 
-function onExtensionsLoaded()
-	for index, name in pairs(Extension.getExtensions()) do
-		LoadedExtensions[name] = index;
-	end
-end
-
 function onAttackModifiers()
-	if LoadedExtensions["Attack Modifiers"] then
+	if CompManagerAC.EXTENSIONS["Attack Modifiers"] then
 		toggle_actions_am.setVisible(true);
 		actions_am.setVisible(true);
 
