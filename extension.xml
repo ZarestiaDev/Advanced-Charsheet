@@ -40,7 +40,7 @@
 		<includefile source="campaign/record_char_combat.xml" />
 		<!-- Split into spellsets and horizontal tabs -->
 		<includefile source="campaign/record_char_actions.xml" />
-		<!-- Location field -->
+		<!-- Adding a slot field -->
 		<includefile source="campaign/record_char_inventory.xml" />
 		<!-- Reworked notes into record_char -->
 		<includefile source="campaign/record_char_notes.xml" />
