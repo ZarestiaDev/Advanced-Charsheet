@@ -233,11 +233,13 @@
 
 			<!-- Damage Reduction -->
 			<string_labeled name="dr" source="defenses.damagereduction">
-				<anchored to="hpframe" position="insidebottomleft" offset="15,42" width="316" height="20" />
+				<anchored to="hpframe" position="insidebottomleft" offset="15,42" height="20">
+					<right offset="-15" />
+				</anchored>
 				<labelres>char_label_dr</labelres>
 			</string_labeled>
 			<string_labeled name="resistances" source="defenses.resistances">
-				<anchored to="dr" position="belowleft" offset="0,5" width="316" height="20" />
+				<anchored to="dr" position="below" offset="0,5" height="20" />
 				<labelres>char_label_resistances</labelres>
 			</string_labeled>
 
@@ -462,7 +464,7 @@
 			
 			<!-- Notes -->
 			<frame_char name="noteframe">
-				<bounds>15,388,-29,-6</bounds>
+				<bounds>15,372,-29,-6</bounds>
 			</frame_char>
 			<label name="char_notes_label">
 				<anchored to="noteframe" position="insidetopleft" offset="14,15" />
