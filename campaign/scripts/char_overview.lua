@@ -19,9 +19,8 @@ end
 function onDrop(x, y, draginfo)
 	if draginfo.isType("shortcut") then
 		local sClass, sRecord = draginfo.getShortcutData();
-		if StringManager.contains({"referenceclass", "referencerace", "referencedeity"}, sClass) then
+		if StringManager.contains({"referenceclass", "referencerace"}, sClass) then
 			CharManager.addInfoDB(getDatabaseNode(), sClass, sRecord);
-			updateAdd();
 			return true;
 		end
 	end
