@@ -315,21 +315,6 @@
 				<static textres="class_label_bab_short" />
 			</label_fieldtop>
 
-			<button_chardetails name="button_char_advanced_effects">
-				<anchored to="baseattackbonus" position="righthigh" offset="28,4" />
-				<script>
-					function onButtonPress()
-						Interface.openWindow("advanced_effects_editor_custom", window.getDatabaseNode());
-					end
-				</script>
-				<invisible />
-			</button_chardetails>
-			<label_fieldtop name="char_advanced_effects_label">
-				<anchored to="button_char_advanced_effects" offset="0,5" />
-				<static textres="char_label_advanced_effects" />
-				<invisible />
-			</label_fieldtop>
-
 			<!-- Speed -->
 			<frame_char name="speedframe">
 				<bounds>236,244,-29,64</bounds>
