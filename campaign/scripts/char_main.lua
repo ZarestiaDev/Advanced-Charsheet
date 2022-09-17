@@ -8,7 +8,6 @@ NODETOTALHP = "hp.total";
 function onInit()
 	onSystemChanged();
 
-	onAdvancedEffects();
 	onLiveHP();
 end
 
@@ -49,13 +48,6 @@ function onSystemChanged()
 
 	perception.setVisible(bPFMode);
 	label_perception.setVisible(bPFMode);
-end
-
-function onAdvancedEffects()
-	if CompManagerAC.EXTENSIONS["FG-PFRPG-Advanced-Effects"] then
-		button_char_advanced_effects.setVisible(true);
-		char_advanced_effects_label.setVisible(true);
-	end
 end
 
 function onLiveHP()
