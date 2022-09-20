@@ -376,7 +376,7 @@
 			<string_labeled name="senses">
 				<anchored to="sensesframe" height="20">
 					<top offset="26" />
-					<left parent="anchor_charmainskill" anchor="right" relation="relative" offset="20" />
+					<left parent="anchor_charmainskill" anchor="right" relation="relative" offset="21" />
 					<right offset="-15" />
 				</anchored>
 				<labelres>char_label_senses</labelres>
