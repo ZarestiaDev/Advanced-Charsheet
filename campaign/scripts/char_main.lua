@@ -13,8 +13,7 @@ end
 
 function onHealthChanged()
 	local nodeChar = getDatabaseNode();
-	local rActor = ActorManager.resolveActor(nodeChar);
-	local sColor = ActorHealthManager.getHealthColor(rActor);
+	local sColor = ActorManager35E.getPCSheetWoundColor(nodeChar);
 
 	local nHPMax = DB.getValue(nodeChar, NODETOTALHP, 0);
 	local nHPWounds = DB.getValue(nodeChar, "hp.wounds", 0);
