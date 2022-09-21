@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+    <windowclass name="charsheet_abilities" merge="join">
+        <sheetdata>
+            <list_charabilities name="specialabilities" merge="replace">
+				<anchored to="specialabilityframe" />
+				<datasource>.specialabilitylist</datasource>
+				<class>char_ability_class</class>
+                <sortby><control>source</control></sortby>
+			</list_charabilities>
+        </sheetdata>
+    </windowclass>
+
+    <windowclass name="char_ability_class" merge="join">
+		<sheetdata>
+			<string_textlistitem name="name" merge="replace">
+				<anchored>
+					<top offset="2" />
+                    <left offset="30" />
+					<right parent="rightanchor" anchor="left" relation="relative" offset="-5" />
+				</anchored>
+				<multilinespacing>20</multilinespacing>
+			</string_textlistitem>
+
+            <classabil_widget name="source">
+                <anchored height="12">
+                    <top offset="5" />
+                    <left />
+                    <right parent="rightanchor" anchor="left" relation="relative" offset="-5" />
+                </anchored>
+            </classabil_widget>
+        </sheetdata>
+    </windowclass>
+</root>

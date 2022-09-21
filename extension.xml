@@ -39,6 +39,8 @@
 		<includefile source="campaign/record_char_main.xml" />
 		<!-- Change size & offsets -->
 		<includefile source="campaign/record_char_combat.xml" />
+		<!-- Add class identifier widgets -->
+		<includefile source="campaign/record_char_abilities.xml" />
 		<!-- Split into spellsets and horizontal tabs -->
 		<includefile source="campaign/record_char_actions.xml" />
 		<!-- Adding a slot field -->
