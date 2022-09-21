@@ -19,9 +19,9 @@ function onSystemChanged()
 	local bPFMode = DataCommon.isPFRPG();
 	
 	if bPFMode then
-		acframe.setStaticBounds(15,0,570,210);
+		acframe.setStaticBounds(15,0,540,210);
 	else
-		acframe.setStaticBounds(15,0,570,140);
+		acframe.setStaticBounds(15,0,540,140);
         saveframe.setStaticBounds(15,140,380,120);
         attackframe.setStaticBounds(15,260,380,150);
         srframe.setStaticBounds(395,140,130,90);

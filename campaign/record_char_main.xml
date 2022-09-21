@@ -131,7 +131,7 @@
 
 			<!-- Health -->
 			<frame_char name="hpframe">
-				<bounds>236,0,-29,116</bounds>
+				<bounds>236,0,-29,180</bounds>
 			</frame_char>
 
 			<genericcontrol name="leftanchor">
@@ -141,30 +141,10 @@
 				</anchored>
 			</genericcontrol>
 
-			<button_chardetails name="button_health">
-				<anchored>
-					<top offset="26" />
-					<left parent="leftanchor" anchor="right" relation="relative" offset="0" />
-				</anchored>
-				<script>
-					function onButtonPress()
-						Interface.openWindow("charsheet_livehp", window.getDatabaseNode());
-					end
-				</script>
-				<invisible />
-			</button_chardetails>
-			<label name="hitpoints_label">
-				<anchored>
-					<top offset="26" />
-					<left parent="leftanchor" anchor="right" relation="relative" offset="5" />
-				</anchored>
-				<static textres="hp" />
-			</label>
-
 			<number_dropadd name="current" source="hp.current">
 				<anchored width="36" height="24">
 					<top offset="24" />
-					<left parent="leftanchor" anchor="right" relation="relative" offset="16" />
+					<left parent="leftanchor" anchor="right" relation="relative" offset="7" />
 				</anchored>
 			</number_dropadd>
 			<number_dropadd name="hp" source="hp.total">
@@ -209,6 +189,18 @@
 					end
 				</script>
 			</number_dropadd>
+			<button_chardetails name="button_health">
+				<anchored>
+					<top offset="26" />
+					<left parent="leftanchor" anchor="right" relation="relative" offset="10" />
+				</anchored>
+				<script>
+					function onButtonPress()
+						Interface.openWindow("charsheet_livehp", window.getDatabaseNode());
+					end
+				</script>
+				<invisible />
+			</button_chardetails>
 
 			<label_fieldtop name="nonlethal_label">
 				<anchored to="nonlethal" />
@@ -224,36 +216,40 @@
 			</label_fieldtop>
 			<label_fieldtop name="hp_label">
 				<anchored to="hp" />
-				<static textres="char_hp_max_label" />
+				<static textres="hp" />
 			</label_fieldtop>
 			<label_fieldtop name="current_label">
 				<anchored to="current" />
 				<static textres="char_hp_current_label" />
 			</label_fieldtop>
 
-			<!-- Damage Reduction -->
+			<!-- Defenses -->
 			<string_labeled name="dr" source="defenses.damagereduction">
-				<anchored to="hpframe" position="insidebottomleft" offset="15,42" height="20">
+				<anchored to="hpframe" position="insidetopleft" offset="14,55" height="20">
 					<right offset="-15" />
 				</anchored>
 				<labelres>char_label_dr</labelres>
 			</string_labeled>
 			<string_labeled name="resistances" source="defenses.resistances">
-				<anchored to="dr" position="below" offset="0,5" height="20" />
+				<anchored to="dr" position="below" offset="0,9" height="20" />
 				<labelres>char_label_resistances</labelres>
+			</string_labeled>
+			<string_labeled name="immunities" source="defenses.immunities">
+				<anchored to="resistances" position="below" offset="0,9" height="20" />
+				<labelres>char_label_immunities</labelres>
+			</string_labeled>
+			<string_labeled name="immunities" source="defenses.specialqualities">
+				<anchored to="immunities" position="below" offset="0,9" height="20" />
+				<labelres>char_label_specialqualities</labelres>
 			</string_labeled>
 
 			<!-- Armor Class -->
 			<frame_char name="acframe">
-				<bounds>236,116,-29,64</bounds>
+				<bounds>307,180,-29,64</bounds>
 			</frame_char>
 
-			<label name="armorclass_label">
-				<anchored to="acframe" position="insidetopleft" offset="15,26" />
-				<static textres="char_label_combatac" />
-			</label>
 			<number_chartotalac name="ac" source="ac.totals.general">
-				<anchored to="hp" position="belowleft" offset="0,93" width="36" height="24" />
+				<anchored to="hp" position="belowleft" offset="15,157" width="36" height="24" />
 			</number_chartotalac>
 			<number_charflatfootedac name="flatfootedac" source="ac.totals.flatfooted">
 				<anchored to="ac" position="righthigh" offset="20,0" width="36" height="24" />
@@ -282,50 +278,24 @@
 				<static textres="cmd" />
 			</label_fieldtop>
 
-			<!-- Misc -->
-			<frame_char name="charmiscframe">
-				<bounds>236,180,-29,64</bounds>
+			<frame_char name="initframe">
+				<bounds>236,180,71,64</bounds>
 			</frame_char>
-			<label name="misc_label">
-				<anchored to="charmiscframe" position="insidetopleft" offset="15,26" />
-				<static textres="char_label_miscellaneous" />
-			</label>
-
 			<number_charinit name="initiative" source="initiative.total">
-				<anchored to="ac" position="belowleft" offset="0,40" width="36" height="24" />
+				<anchored to="initframe" position="insidetopleft" offset="17,25" width="36" height="24" />
 			</number_charinit>
-			<number_charsr name="spellresistance" source="defenses.sr.total">
-				<anchored to="initiative" position="righthigh" offset="20,0" width="36" height="24" />
-			</number_charsr>
-			<basicnumber name="baseattackbonus" source="attackbonus.base">
-				<anchored to="spellresistance" position="righthigh" offset="20,0" width="36" height="24" />
-				<displaysign />
-			</basicnumber>
-
-			<label_fieldtop name="spellresistance_label">
-				<anchored to="spellresistance" />
-				<static textres="sr" />
-			</label_fieldtop>
 			<label_fieldtop name="initiative_label">
 				<anchored to="initiative" />
 				<static textres="init" />
 			</label_fieldtop>
-			<label_fieldtop name="baseattackbonus_label">
-				<anchored to="baseattackbonus" />
-				<static textres="class_label_bab_short" />
-			</label_fieldtop>
 
 			<!-- Speed -->
 			<frame_char name="speedframe">
-				<bounds>236,244,-29,64</bounds>
+				<bounds>307,244,-29,64</bounds>
 			</frame_char>
 
-			<label name="speedfinal_label">
-				<anchored to="speedframe" position="insidetopleft" offset="15,26" />
-				<static textres="char_label_speed" />
-			</label>
 			<number_charspeed name="speedfinal" source="speed.final">
-				<anchored to="initiative" position="belowleft" offset="0,40" width="36" height="24" />
+				<anchored to="ac" position="belowleft" offset="0,39" width="36" height="24" />
 			</number_charspeed>
 			<string_labeled name="speedspecial" source="speed.special">
 				<anchored to="speedframe" height="20">
@@ -335,13 +305,17 @@
 				</anchored>
 				<labelres>char_label_speedspecial</labelres>
 			</string_labeled>
+			<label_fieldtop name="speed_label">
+				<anchored to="speedfinal" />
+				<static textres="char_label_speed" />
+			</label_fieldtop>
 
 			<!-- Senses -->
 			<frame_char name="sensesframe">
-				<bounds>236,308,-29,64</bounds>
+				<bounds>307,308,-29,64</bounds>
 			</frame_char>
 			<genericcontrol name="anchor_charmainskill">
-				<anchored to="sensesframe" position="insidetopleft" offset="0,24" width="0" height="20" />
+				<anchored to="sensesframe" position="insidetopleft" offset="0,27" width="0" height="20" />
 			</genericcontrol>
 			<button_charmainskill name="spot">
 				<skill>skill_value_spot</skill>
@@ -376,7 +350,7 @@
 			<string_labeled name="senses">
 				<anchored to="sensesframe" height="20">
 					<top offset="26" />
-					<left parent="anchor_charmainskill" anchor="right" relation="relative" offset="21" />
+					<left parent="anchor_charmainskill" anchor="right" relation="relative" offset="5" />
 					<right offset="-15" />
 				</anchored>
 				<labelres>char_label_senses</labelres>
@@ -415,6 +389,18 @@
 				<static textres="grp" />
 			</label_fieldtop>
 
+			<frame_char name="babframe">
+				<bounds>236,244,71,64</bounds>
+			</frame_char>
+			<basicnumber name="baseattackbonus" source="attackbonus.base">
+				<anchored to="babframe" position="insidetopleft" offset="17,25" width="36" height="24" />
+				<displaysign />
+			</basicnumber>
+			<label_fieldtop name="baseattackbonus_label">
+				<anchored to="baseattackbonus" offset="0,2" />
+				<static textres="class_label_bab_short" />
+			</label_fieldtop>
+
 			<!-- Saves -->
 			<frame_char name="saveframe">
 				<bounds>15,308,220,64</bounds>
@@ -445,6 +431,17 @@
 			<label_fieldtop name="will_label">
 				<anchored to="will" />
 				<static textres="will" />
+			</label_fieldtop>
+
+			<frame_char name="srframe">
+				<bounds>236,308,71,64</bounds>
+			</frame_char>
+			<number_charsr name="spellresistance" source="defenses.sr.total">
+				<anchored to="srframe" position="insidetopleft" offset="17,25" width="36" height="24" />
+			</number_charsr>
+			<label_fieldtop name="spellresistance_label">
+				<anchored to="spellresistance" />
+				<static textres="sr" />
 			</label_fieldtop>
 			
 			<!-- Notes -->

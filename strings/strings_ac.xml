@@ -16,6 +16,8 @@
 	<string name="char_label_skillperception_short">Perc.</string>
 	<string name="char_label_ranged_short">Rngd</string>
 	<string name="char_label_resistances">Resistances</string>
+	<string name="char_label_immunities">Immunities</string>
+	<string name="char_label_specialqualities">Other Special Qualities</string>
 
 	<string name="char_label_itemslot">Slot</string>
 	<string name="char_hp_current_label">Current</string>

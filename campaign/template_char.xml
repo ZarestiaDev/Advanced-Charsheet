@@ -101,20 +101,20 @@
 	
 	<template name="number_charcombatmod">
 		<basicnumber>
-			<anchored position="right" offset="12,0" width="36" />
+			<anchored position="right" offset="12,0" width="32" />
 			<displaysign />
 		</basicnumber>
 	</template>
 	
 	<template name="cycler_charcombatability">
 		<cycler_charability>
-			<anchored position="righthigh" offset="12,0" height="20" width="36" /> 
+			<anchored position="righthigh" offset="12,0" height="20" width="32" /> 
 		</cycler_charability>
 	</template>
 	
 	<template name="number_charcombatabilitymod">
 		<number_charabilitymod>
-			<anchored position="right" offset="6,0" width="36" /> 
+			<anchored position="right" offset="6,0" width="32" /> 
 		</number_charabilitymod>
 	</template>
 	
@@ -177,44 +177,6 @@
 			<sortby><control>name</control></sortby>
 			<script file="campaign/scripts/char_weaponlist.lua" />
 		</windowlist>
-	</template>
-	
-	<template name="button_charmainskill">
-		<button_roll>
-			<anchored to="anchor_charmainskill">
-				<left anchor="right" relation="relative" offset="22" />
-				<top />
-			</anchored>
-			<script>
-				local sSkill;
-				
-				function onInit()
-					sSkill = Interface.getString(skill[1]);
-					
-					if sSkill then
-						setTooltipText(sSkill .. " " .. Interface.getString("char_tooltip_skillcheck"));
-					end
-				end
-				
-				function action(draginfo)
-					if sSkill then
-						local nodeChar = window.getDatabaseNode();
-						local rActor = ActorManager.resolveActor(nodeChar);
-						local nValue = CharManager.getSkillValue(rActor, sSkill);
-						ActionSkill.performRoll(draginfo, rActor, sSkill, nValue);
-					end
-				end
-				
-				function onButtonPress()
-					action();
-				end
-				
-				function onDragStart(button, x, y, draginfo)
-					action(draginfo);
-					return true;
-				end
-			</script>
-		</button_roll>
 	</template>
 
 	 <!-- Change height to compensate portrait changes -->
