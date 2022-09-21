@@ -9,6 +9,7 @@ function onInit()
 	onSystemChanged();
 
 	onLiveHP();
+	onDrainPermanentBonus();
 end
 
 function onHealthChanged()
@@ -55,5 +56,31 @@ function onLiveHP()
 		livehitpoints.setVisible(false);
 		
 		NODETOTALHP = "livehp.total";
+	end
+end
+
+function onDrainPermanentBonus()
+	if CompManagerAC.EXTENSIONS["FG-PFRPG-Drain-and-Permanent-Bonuses"] then
+		abilityframe.setStaticBounds(15,0,245,244);
+		hpframe.setStaticBounds(261,0,-29,180);
+		initframe.setStaticBounds(261,180,71,64);
+		acframe.setStaticBounds(332,180,-29,64);
+
+		strength_label.setValue(Interface.getString("str"));
+		dexterity_label.setValue(Interface.getString("dex"));
+		constitution_label.setValue(Interface.getString("con"));
+		intelligence_label.setValue(Interface.getString("int"));
+		wisdom_label.setValue(Interface.getString("wis"));
+		charisma_label.setValue(Interface.getString("cha"));
+
+		strength_label.setAnchoredWidth(70);
+		dexterity_label.setAnchoredWidth(70);
+		constitution_label.setAnchoredWidth(70);
+		intelligence_label.setAnchoredWidth(70);
+		wisdom_label.setAnchoredWidth(70);
+		charisma_label.setAnchoredWidth(70);
+
+		strength.setAnchor("left", "", "left", "", 64);
+		speedfinal.setAnchor("left", "ac", "left", "", -30)
 	end
 end

@@ -4,7 +4,7 @@
 	<properties>
 		<name>Feature: Advanced Charsheet</name>
 		<version>0.1</version>
-		<loadorder>50</loadorder>
+		<loadorder>28</loadorder>
 		<description>
 			<text>Revisited Character Sheet</text>
 			<website></website>
@@ -20,6 +20,7 @@
 
 	<!-- 
 		Load Orders
+		Drain and Permanent Bonuses: 29
 		Attack Modifier: 51
 		LiveHP: 60
 	-->
