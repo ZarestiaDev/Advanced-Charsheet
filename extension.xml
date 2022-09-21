@@ -29,8 +29,9 @@
 
 	<base>
 	<!-- High-Level Scripts -->
-		<script name="CompManagerAC" file="scripts/manager_compatibility.lua" />
+		<script name="CompManagerAC" file="scripts/manager_compatibility_ac.lua" />
 		<script name="SpellManagerAC" file="scripts/manager_spell_ac.lua" />
+		<script name="OptionsAC" file="scripts/manager_options_ac.lua" />
 
 	<!-- Campaign -->
 		<!-- Reworked record_char -->

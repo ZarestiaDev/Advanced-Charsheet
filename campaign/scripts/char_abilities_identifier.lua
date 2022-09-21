@@ -1,10 +1,25 @@
 function onFirstLayout()
-    setIdentifier();
-    DB.addHandler(DB.getPath(getDatabaseNode().getChild("...."), "classes"), "onChildUpdate", setIdentifier);
+    OptionsManager.registerCallback("ACCI", stateChanged);
+
+    stateChanged();
+
+    DB.addHandler(DB.getPath(getDatabaseNode().getChild("...."), "classes"), "onChildUpdate", stateChanged);
 end
 
 function onClose()
-	DB.removeHandler(DB.getPath(getDatabaseNode().getChild("...."), "classes"), "onChildUpdate", setIdentifier);
+    OptionsManager.unregisterCallback("ACCI", stateChanged);
+
+	DB.removeHandler(DB.getPath(getDatabaseNode().getChild("...."), "classes"), "onChildUpdate", stateChanged);
+end
+
+function stateChanged()
+    local nodeChar = window.getDatabaseNode();
+
+    if OptionsManager.isOption("ACCI", "on") then
+        setIdentifier(nodeChar);
+    else
+        resetIdentifier(nodeChar);
+    end
 end
 
 function getClasses(nodeChar)
@@ -14,8 +29,7 @@ function getClasses(nodeChar)
     return nClasses;
 end
 
-function setIdentifier()
-    local nodeChar = window.getDatabaseNode();
+function setIdentifier(nodeChar)
     if getClasses(nodeChar) <= 1 then
         return;
     end
@@ -41,4 +55,13 @@ function setIdentifier()
     end
 
     DB.setValue(nodeChar, "name", "string", "[" .. sAbbr:upper() .. "] " .. sName);
+end
+
+function resetIdentifier(nodeChar)
+    local sName = DB.getValue(nodeChar, "name", "");
+    if sName:match("%[") then
+        sName = sName:gsub("^%b[]%s", "");
+        
+        DB.setValue(nodeChar, "name", "string", sName);
+    end
 end
