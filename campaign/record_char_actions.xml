@@ -14,7 +14,14 @@
 			</frame_char>
 			
 			<!-- Add dummy control for Attack Modifiers insertbefore -->
-			<genericcontrol name="actions" />
+			<genericcontrol name="actions">
+				<anchored>
+					<top />
+					<left />
+				</anchored>
+				<disabled />
+				<invisible />
+			</genericcontrol>
 
 			<actions_subwindow name="subspells">
 				<class>char_spells</class>
