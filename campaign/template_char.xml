@@ -52,25 +52,8 @@
 	<template name="classabil_widget">
 		<stringcontrol>
 			<font>tabfont</font>
-			<script>
-				function onFirstLayout()
-					local sClass = DB.getValue(window.getDatabaseNode(), "source", "");
-					local sAbbr = "";
-
-					for abbr, class in pairs(DataCommon.class_stol) do
-						if sClass:lower() == class then
-							sAbbr = abbr;
-							break;
-						else
-							sAbbr = sClass:sub(1,3);
-						end
-					end
-
-					setValue(sAbbr:upper());
-					setTooltipText(sClass);
-				end
-			</script>
-			<readonly />
+			<disabled />
+			<script file="campaign/scripts/char_abilities_identifier.lua" />
 		</stringcontrol>
 	</template>
 
