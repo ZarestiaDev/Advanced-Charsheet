@@ -49,12 +49,12 @@
 		</genericcontrol>
 	</template>
 
-	<template name="classabil_widget">
-		<stringcontrol>
-			<font>tabfont</font>
-			<disabled />
-			<script file="campaign/scripts/char_abilities_identifier.lua" />
-		</stringcontrol>
+	<template name="button_tracker">
+		<button_text>
+			<anchored position="righthigh" offset="10,0" width="60" height="20" />
+			<script file="campaign/scripts/char_actions_tracker.lua" />
+			<invisible />
+		</button_text>
 	</template>
 
 	<template name="actions_subwindow">

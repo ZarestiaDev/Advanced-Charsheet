@@ -55,6 +55,35 @@
 			<button_actiontab name="subothers_button">
 				<labelres>char_actions_others</labelres>
 			</button_actiontab>
+
+			<label name="label_actiontracker">
+				<anchored>
+					<top parent="leftanchor" anchor="bottom" offset="35" />
+					<left offset="20" />
+				</anchored>
+				<invisible />
+				<static textres="char_actions_tracker" />
+			</label>
+			<button_tracker name="standard">
+				<anchored to="label_actiontracker" />
+				<state textres="tracker_standard" />
+			</button_tracker>
+			<button_tracker name="move">
+				<anchored to="standard" />
+				<state textres="tracker_move" />
+			</button_tracker>
+			<button_tracker name="fullround">
+				<anchored to="move" />
+				<state textres="tracker_fullround" />
+			</button_tracker>
+			<button_tracker name="swift">
+				<anchored to="fullround" />
+				<state textres="tracker_swift" />
+			</button_tracker>
+			<button_tracker name="reset">
+				<anchored to="swift" />
+				<state textres="tracker_reset" />
+			</button_tracker>
 		</sheetdata>
 	</windowclass>
 	
