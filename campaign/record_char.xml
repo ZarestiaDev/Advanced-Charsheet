@@ -7,6 +7,7 @@
 
 <root>
 	<windowclass name="charsheet" merge="join">
+		<script file="campaign/scripts/char.lua" />
 		<placement>
 			<size width="585" height="760" />
 		</placement>
@@ -33,7 +34,7 @@
 			<frame_char name="overviewframe">
 				<anchored height="97">
 					<top />
-					<left anchor="portrait" offset="-4" />
+					<left parent="portrait" anchor="right" offset="5" />
 					<right offset="-59" />
 				</anchored>
 			</frame_char>
@@ -82,7 +83,7 @@
 			<frame_char name="raceframe">
 				<anchored height="57" width="161">
 					<top parent="overviewframe" anchor="bottom" offset="0,3" />
-					<left anchor="portrait" offset="-4" />
+					<left parent="portrait" anchor="right" offset="5" />
 				</anchored>
 			</frame_char>
 			<button_iadd_creation name="race_add">

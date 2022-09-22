@@ -20,9 +20,10 @@
 
 	<!-- 
 		Load Orders
-		Drain and Permanent Bonuses: 29
-		Attack Modifiers: 51
-		LiveHP: 60
+		- Drain and Permanent Bonuses: 29
+		- Extra Actions: 50
+		- Attack Modifiers: 51
+		- LiveHP: 60
 	-->
 
 	<announcement text="3.5E/PFRPG Advanced Charsheet - v0.1 by Zarestia" font="emotefont" />
