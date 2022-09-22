@@ -21,11 +21,11 @@
 	<!-- 
 		Load Orders
 		Drain and Permanent Bonuses: 29
-		Attack Modifier: 51
+		Attack Modifiers: 51
 		LiveHP: 60
 	-->
 
-	<announcement text="3.5E/PFRPG Advanced Charsheet - v0.1 \rby Zarestia, 2022" font="emotefont" />
+	<announcement text="3.5E/PFRPG Advanced Charsheet - v0.1 by Zarestia" font="emotefont" />
 
 	<base>
 	<!-- High-Level Scripts -->

@@ -40,6 +40,8 @@ function stateChanged()
     local bVisible;
     local nTopActionFrame;
     local nTopActionSub;
+	local sParent = "";
+	local sAnchor = "top";
 
     if OptionsManager.isOption("ACAT", "on") then
         bVisible = true;
@@ -51,16 +53,22 @@ function stateChanged()
         nTopActionSub = 35;
     end
 
-    setTracker(bVisible, nTopActionFrame, nTopActionSub);
+	if CompManagerAC.EXTENSIONS["Attack Modifiers"] then
+		sParent = "actions_am";
+		sAnchor = "bottom";
+		nTopActionSub = 22;
+	end
+
+    setTracker(bVisible, nTopActionFrame, nTopActionSub, sParent, sAnchor);
 end
 
-function setTracker(bVisible, nTopActionFrame, nTopActionSub)
+function setTracker(bVisible, nTopActionFrame, nTopActionSub, sParent, sAnchor)
     actionframe.setStaticBounds(15,nTopActionFrame,-29,-2);
 
-    subspells.setAnchor("top", "", "top", "", nTopActionSub);
-    subweapons.setAnchor("top", "", "top", "", nTopActionSub);
-    subitems.setAnchor("top", "", "top", "", nTopActionSub);
-    subothers.setAnchor("top", "", "top", "", nTopActionSub);
+    subspells.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
+    subweapons.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
+    subitems.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
+    subothers.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
 
     label_actiontracker.setVisible(bVisible);
 	standard.setVisible(bVisible);
