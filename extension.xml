@@ -63,8 +63,7 @@
 	<!-- Strings -->
 		<includefile source="strings/strings_ac.xml" />
 	
-	<!-- Templates -->
-		<!-- Templates, size, and offset adjustments -->
+	<!-- Templates, size, and offset adjustments -->
 		<includefile source="campaign/template_char.xml" />
 	</base>
 </root>

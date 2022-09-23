@@ -39,6 +39,7 @@ end
 function stateChanged()
     local bVisible;
     local nTopActionFrame;
+	local nBottomActionFrame = -2;
     local nTopActionSub;
 	local sParent = "";
 	local sAnchor = "top";
@@ -59,11 +60,15 @@ function stateChanged()
 		nTopActionSub = 22;
 	end
 
-    setTracker(bVisible, nTopActionFrame, nTopActionSub, sParent, sAnchor);
+	if CompManagerAC.EXTENSIONS["WinnowingPursuits"] then
+		nBottomActionFrame = -47;
+	end
+
+    setTracker(bVisible, nTopActionFrame, nBottomActionFrame, nTopActionSub, sParent, sAnchor);
 end
 
-function setTracker(bVisible, nTopActionFrame, nTopActionSub, sParent, sAnchor)
-    actionframe.setStaticBounds(15,nTopActionFrame,-29,-2);
+function setTracker(bVisible, nTopActionFrame, nBottomActionFrame, nTopActionSub, sParent, sAnchor)
+    actionframe.setStaticBounds(15,nTopActionFrame,-29,nBottomActionFrame);
 
     subspells.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
     subweapons.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
