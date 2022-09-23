@@ -29,13 +29,26 @@
 			<portrait_char name="portrait">
 				<anchored position="insidetopleft" offset="3,3" width="148" height="148" />
 			</portrait_char>
+
+			<genericcontrol name="rightanchor">
+				<anchored position="insidetopright" offset="0,0" width="0" height="0" />
+				<disabled />
+			</genericcontrol>
+
+			<!-- Token -->
+			<token_char name="token">
+				<anchored to="rightanchor" width="47" height="47">
+					<top offset="46" />
+					<right anchor="left" relation="relative" offset="-4" />
+				</anchored>
+			</token_char>
 			
 			<!-- Text Information -->
 			<frame_char name="overviewframe">
-				<anchored height="97">
+				<anchored to="rightanchor" height="97">
 					<top />
 					<left parent="portrait" anchor="right" offset="5" />
-					<right offset="-59" />
+					<right anchor="left" relation="relative" offset="-5"  />
 				</anchored>
 			</frame_char>
 			<string_labeled name="name">
@@ -71,13 +84,10 @@
 				<labelres>char_label_deity</labelres>
 			</string_main_secondary>
 
-			<!-- Token & Speak -->
+			<!-- Speak -->
 			<button_charactivate name="speak">
 				<anchored to="overviewframe" position="righthigh" offset="8,0" width="23" height="22" />
 			</button_charactivate>
-			<token_char name="token">
-				<anchored to="overviewframe" position="righthigh" offset="8,46" width="47" height="47" />
-			</token_char>
 
 			<!-- Race -->
 			<frame_char name="raceframe">
