@@ -65,6 +65,8 @@
 				<left offset="10" />
 				<right offset="-25" />
 			</anchored>
+			<activate />
+			<fastinit />
 		</subwindow>
 	</template>
 
