@@ -73,9 +73,10 @@
 	<template name="sub_actions_subwindow">
 		<subwindow>
 			<anchored position="over" offset="-12,0">
-				<bottom offset="-50" />
+				<bottom offset="-2" />
 			</anchored>
 			<activate />
+			<fastinit />
 		</subwindow>
 	</template>
 

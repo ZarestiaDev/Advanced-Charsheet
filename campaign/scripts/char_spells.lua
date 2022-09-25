@@ -5,6 +5,8 @@
 function onInit()
 	-- Be sure to always be in "action" mode
 	updateDisplayMode()
+
+	onWinnowingPursuits();
 end
 
 function onModeChanged()
@@ -50,6 +52,24 @@ function updateDisplayMode()
 			for _,v in pairs(others.subwindow.spellclasslist.getWindows()) do
 				v.onDisplayChanged();
 			end
+		end
+	end
+end
+
+function onWinnowingPursuits()
+	local nBottomOffset = -2;
+
+	if CompManagerAC.EXTENSIONS["WinnowingPursuits"] then
+		nBottomOffset = -50;
+
+		if spells then
+			spells.setAnchor("bottom", "", "bottom", "", nBottomOffset);
+		end
+		if items then
+			items.setAnchor("bottom", "", "bottom", "", nBottomOffset);
+		end
+		if others then
+			others.setAnchor("bottom", "", "bottom", "", nBottomOffset);
 		end
 	end
 end

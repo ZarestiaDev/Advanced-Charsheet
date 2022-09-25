@@ -99,18 +99,18 @@
 			</scrollbar>
 
 			<button_expand name="expand">
-				<anchored position="insidebottomleft" offset="15,15" width="20" height="20" />
+				<anchored to="spells" position="insidebottomleft" offset="10,15" width="20" height="20" />
 				<target>spells,spellclasslist,levels,spells</target>
 				<togglelevel>3</togglelevel>
 			</button_expand>
 			<button_collapse name="collapse">
-				<anchored position="insidebottomleft" offset="45,15" width="20" height="20" />
+				<anchored to="spells" position="insidebottomleft" offset="40,15" width="20" height="20" />
 				<target>spells,spellclasslist,levels,spells</target>
 				<togglelevel>3</togglelevel>
 			</button_collapse>
 
 			<label name="label_mode">
-				<anchored position="insidebottomleft" offset="80,15" />
+				<anchored to="spells" position="insidebottomleft" offset="75,15" />
 				<static textres="spell_label_mode" />
 			</label>
 			<button_stringcycler name="spellmode">
@@ -128,7 +128,7 @@
 			</button_stringcycler>
 
 			<button_iedit name="spells_iedit">
-				<anchored position="insidebottomright" offset="25,15" />
+				<anchored to="spells" position="insidebottomright" offset="15,15" />
 				<tooltip textres="char_tooltip_actionedit" />
 				<script>
 					function onValueChanged()
@@ -192,7 +192,7 @@
 			</scrollbar>
 
 			<label name="label_mode">
-				<anchored position="insidebottomleft" offset="15,15" />
+				<anchored to="weapons" position="insidebottomleft" offset="15,15" />
 				<static textres="spell_label_mode" />
 			</label>
 			<button_stringcycler name="weaponmode">
@@ -210,7 +210,7 @@
 			</button_stringcycler>
 			
 			<button_iedit name="weapons_iedit">
-				<anchored position="insidebottomright" offset="25,15" />
+				<anchored to="weapons" position="insidebottomright" offset="15,15" />
 				<tooltip textres="char_tooltip_actionedit" />
 				<script>
 					function onValueChanged()
@@ -319,7 +319,7 @@
 			</scrollbar>
 
 			<label name="label_mode">
-				<anchored position="insidebottomleft" offset="15,15" />
+				<anchored to="items" position="insidebottomleft" offset="15,15" />
 				<static textres="spell_label_mode" />
 			</label>
 			<button_stringcycler name="spellmode">
@@ -337,7 +337,7 @@
 			</button_stringcycler>
 			
 			<button_iedit name="spells_iedit">
-				<anchored position="insidebottomright" offset="25,15" />
+				<anchored to="items" position="insidebottomright" offset="15,15" />
 				<tooltip textres="char_tooltip_actionedit" />
 				<script>
 					function onValueChanged()
@@ -402,7 +402,7 @@
 			</scrollbar>
 
 			<label name="label_mode">
-				<anchored position="insidebottomleft" offset="15,15" />
+				<anchored to="others" position="insidebottomleft" offset="15,15" />
 				<static textres="spell_label_mode" />
 			</label>
 			<button_stringcycler name="spellmode">
@@ -420,7 +420,7 @@
 			</button_stringcycler>
 			
 			<button_iedit name="spells_iedit">
-				<anchored position="insidebottomright" offset="25,15" />
+				<anchored to="others" position="insidebottomright" offset="15,15" />
 				<tooltip textres="char_tooltip_actionedit" />
 				<script>
 					function onValueChanged()

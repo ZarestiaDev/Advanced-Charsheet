@@ -1,8 +1,3 @@
--- 
--- Please see the license.html file included with this distribution for 
--- attribution and copyright information.
---
-
 function onInit()
 	DB.addHandler(DB.getPath(getDatabaseNode()), "onChildAdded", onChildAdded);
 
