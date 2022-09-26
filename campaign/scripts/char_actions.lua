@@ -62,6 +62,10 @@ function stateChanged()
 
 	if CompManagerAC.EXTENSIONS["WinnowingPursuits"] then
 		nBottomActionFrame = -47;
+		subspells.setAnchor("bottom", "", "", "", nBottomActionFrame);
+		subweapons.setAnchor("bottom", "", "", "", nBottomActionFrame);
+		subitems.setAnchor("bottom", "", "", "", nBottomActionFrame);
+		subothers.setAnchor("bottom", "", "", "", nBottomActionFrame);
 	end
 
     setTracker(bVisible, nTopActionFrame, nBottomActionFrame, nTopActionSub, sParent, sAnchor);
