@@ -21,12 +21,13 @@
 	<!-- 
 		Load Orders
 		- Drain and Permanent Bonuses: 29
+		- Hero Points: 50
 		- Extra Actions: 50
 		- Attack Modifiers: 51
 		- LiveHP: 60
 	-->
 
-	<announcement text="3.5E/PFRPG Advanced Charsheet - v1.0-hotfix1 by Zarestia" font="emotefont" />
+	<announcement text="3.5E/PFRPG Advanced Charsheet - v1.0-hotfix3 by Zarestia" font="emotefont" />
 
 	<base>
 	<!-- High-Level Scripts -->

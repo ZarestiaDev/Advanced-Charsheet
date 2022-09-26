@@ -8,6 +8,7 @@ function onInit()
 	DB.addHandler(DB.getPath(getDatabaseNode(), "classes"), "onChildUpdate", onLevelChanged);
 
 	onLocalDiceTower();
+	onHeroPoints();
 end
 
 function onClose()
@@ -37,5 +38,12 @@ function onLocalDiceTower()
 		speak.resetAnchor("right");
 		speak.resetAnchor("left");
         speak.setAnchor("right", "dicetower_forwarding", "left", "", 60);
+    end
+end
+
+function onHeroPoints()
+    if CompManagerAC.EXTENSIONS["HeroPoints"] then
+		name.resetAnchor("right");
+		name.setAnchoredWidth(150);
     end
 end
