@@ -9,7 +9,7 @@ local tSpellsets = { "spellset", "itemspellset", "otherspellset" };
 
 function onInit()
     -- check first if we want to rather use Kelrugem's SpellManager implementation
-    if CompManagerAC.EXTENSIONS["Extended-automation-and-overlays"] then
+    if CompManagerAC.EXTENSIONS["Full OverlayPackage"] then
         return;
     end
 
