@@ -42,6 +42,14 @@
 					<right anchor="left" relation="relative" offset="-4" />
 				</anchored>
 			</token_char>
+
+			<!-- Speak -->
+			<button_charactivate name="speak">
+				<anchored to="rightanchor" width="23" height="22">
+					<top offset="4" />
+					<right anchor="left" relation="relative" offset="32" />
+				</anchored>
+			</button_charactivate>
 			
 			<!-- Text Information -->
 			<frame_char name="overviewframe">
@@ -83,11 +91,6 @@
 				<anchored to="alignment" width="85" />
 				<labelres>char_label_deity</labelres>
 			</string_main_secondary>
-
-			<!-- Speak -->
-			<button_charactivate name="speak">
-				<anchored to="overviewframe" position="righthigh" offset="8,0" width="23" height="22" />
-			</button_charactivate>
 
 			<!-- Race -->
 			<frame_char name="raceframe">
