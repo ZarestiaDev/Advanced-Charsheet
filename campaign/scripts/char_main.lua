@@ -10,6 +10,7 @@ function onInit()
 
 	onLiveHP();
 	onDrainPermanentBonus();
+	onMaladyTracker();
 end
 
 function onHealthChanged()
@@ -82,5 +83,12 @@ function onDrainPermanentBonus()
 
 		strength.setAnchor("left", "", "left", "", 64);
 		speedfinal.setAnchor("left", "ac", "left", "", -30)
+	end
+end
+
+function onMaladyTracker()
+	if CompManagerAC.EXTENSIONS["FG-PFRPG-Malady-Tracker"] then
+		pc_diseases.setAnchor("top", "", "top", "", 25);
+		pc_diseases.setAnchor("left", "leftanchor", "right", "relative", 5);
 	end
 end
