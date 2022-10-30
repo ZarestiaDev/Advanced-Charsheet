@@ -7,7 +7,6 @@ function onInit()
 	onLevelChanged();
 	DB.addHandler(DB.getPath(getDatabaseNode(), "classes"), "onChildUpdate", onLevelChanged);
 
-	onLocalDiceTower();
 	onHeroPoints();
 end
 
@@ -27,18 +26,6 @@ function onDrop(x, y, draginfo)
 			return true;
 		end
 	end
-end
-
-function onLocalDiceTower()
-	if Session.IsHost then
-		return;
-	end
-
-    if CompManagerAC.EXTENSIONS["M23185F_LDTE"] then
-		speak.resetAnchor("right");
-		speak.resetAnchor("left");
-        speak.setAnchor("right", "dicetower_forwarding", "left", "", 60);
-    end
 end
 
 function onHeroPoints()
