@@ -113,19 +113,7 @@
 				<anchored position="insidebottomleft" offset="80,15" />
 				<static textres="spell_label_mode" />
 			</label>
-			<button_stringcycler name="spellmode">
-				<anchored to="label_mode" position="righthigh" offset="10,0" width="80" />
-				<parameters>
-					<labelsres>spell_label_modeprep|spell_label_modecombat</labelsres>
-					<values>preparation|combat</values>
-					<defaultlabelres>spell_label_modestd</defaultlabelres>
-				</parameters>
-				<script>
-					function onValueChanged()
-						window.onModeChanged();
-					end
-				</script>
-			</button_stringcycler>
+			<action_mode name="spellmode" />
 
 			<button_iedit name="spells_iedit">
 				<anchored position="insidebottomright" offset="25,15" />
@@ -322,19 +310,7 @@
 				<anchored position="insidebottomleft" offset="25,15" />
 				<static textres="spell_label_mode" />
 			</label>
-			<button_stringcycler name="spellmode">
-				<anchored to="label_mode" position="righthigh" offset="10,0" width="80" />
-				<parameters>
-					<labelsres>spell_label_modeprep|spell_label_modecombat</labelsres>
-					<values>preparation|combat</values>
-					<defaultlabelres>spell_label_modestd</defaultlabelres>
-				</parameters>
-				<script>
-					function onValueChanged()
-						window.onModeChanged();
-					end
-				</script>
-			</button_stringcycler>
+			<action_mode name="spellmode" />
 			
 			<button_iedit name="spells_iedit">
 				<anchored position="insidebottomright" offset="25,15" />
@@ -405,19 +381,7 @@
 				<anchored position="insidebottomleft" offset="25,15" />
 				<static textres="spell_label_mode" />
 			</label>
-			<button_stringcycler name="spellmode">
-				<anchored to="label_mode" position="righthigh" offset="10,0" width="80" />
-				<parameters>
-					<labelsres>spell_label_modeprep|spell_label_modecombat</labelsres>
-					<values>preparation|combat</values>
-					<defaultlabelres>spell_label_modestd</defaultlabelres>
-				</parameters>
-				<script>
-					function onValueChanged()
-						window.onModeChanged();
-					end
-				</script>
-			</button_stringcycler>
+			<action_mode name="spellmode" />
 			
 			<button_iedit name="spells_iedit">
 				<anchored position="insidebottomright" offset="25,15" />

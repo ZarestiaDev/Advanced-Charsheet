@@ -80,6 +80,22 @@
 		</subwindow>
 	</template>
 
+	<template name="action_mode">
+		<button_stringcycler>
+			<anchored to="label_mode" position="righthigh" offset="10,0" width="80" />
+			<parameters>
+				<labelsres>spell_label_modeprep|spell_label_modecombat</labelsres>
+				<values>preparation|combat</values>
+				<defaultlabelres>spell_label_modestd</defaultlabelres>
+			</parameters>
+			<script>
+				function onValueChanged()
+					window.onModeChanged();
+				end
+			</script>
+		</button_stringcycler>
+	</template>
+
 	<!-- Size, offset, and minor anchoring changes -->
 	<template name="number_charabilityscore">
 		<basicnumber>
