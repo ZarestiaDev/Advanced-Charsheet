@@ -110,6 +110,26 @@
 		</buttoncontrol>
 	</template>
 
+	<template name="button_spell_edit">
+		<button_iedit>
+			<anchored position="insidebottomright" offset="25,15" />
+			<tooltip textres="char_tooltip_actionedit" />
+			<script>
+				function onValueChanged()
+					local bEditMode = (getValue() == 1);
+					local nodeWindow = window.getControls()[1].getName();
+					
+					window.label_mode.setVisible(not bEditMode);
+					window.spellmode.setVisible(not bEditMode);
+					if bEditMode then
+						DB.setValue(window.getDatabaseNode(), "spellmode", "string", "standard");
+					end
+					window[nodeWindow].subwindow.update();
+				end
+			</script>
+		</button_iedit>
+	</template>
+
 	<!-- Size, offset, and minor anchoring changes -->
 	<template name="number_charabilityscore">
 		<basicnumber>

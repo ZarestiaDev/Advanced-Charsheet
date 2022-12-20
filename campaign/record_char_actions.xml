@@ -115,22 +115,7 @@
 			</label>
 			<action_mode name="spellmode" />
 
-			<button_iedit name="spells_iedit">
-				<anchored position="insidebottomright" offset="25,15" />
-				<tooltip textres="char_tooltip_actionedit" />
-				<script>
-					function onValueChanged()
-						local bEditMode = (getValue() == 1);
-						
-						window.label_mode.setVisible(not bEditMode);
-						window.spellmode.setVisible(not bEditMode);
-						if bEditMode then
-							DB.setValue(window.getDatabaseNode(), "spellmode", "string", "standard");
-						end
-						window.spells.subwindow.update();
-					end
-				</script>
-			</button_iedit>
+			<button_spell_edit name="spells_iedit" />
 			<button_spell_add name="spellclass_iadd" />
 		</sheetdata>
 	</windowclass>
@@ -303,22 +288,7 @@
 			</label>
 			<action_mode name="spellmode" />
 			
-			<button_iedit name="spells_iedit">
-				<anchored position="insidebottomright" offset="25,15" />
-				<tooltip textres="char_tooltip_actionedit" />
-				<script>
-					function onValueChanged()
-						local bEditMode = (getValue() == 1);
-						
-						window.label_mode.setVisible(not bEditMode);
-						window.spellmode.setVisible(not bEditMode);
-						if bEditMode then
-							DB.setValue(window.getDatabaseNode(), "spellmode", "string", "standard");
-						end
-						window.items.subwindow.update();
-					end
-				</script>
-			</button_iedit>
+			<button_spell_edit name="spells_iedit" />
 			<button_spell_add name="spellclass_iadd" />
 		</sheetdata>
 	</windowclass>
@@ -365,22 +335,7 @@
 			</label>
 			<action_mode name="spellmode" />
 			
-			<button_iedit name="spells_iedit">
-				<anchored position="insidebottomright" offset="25,15" />
-				<tooltip textres="char_tooltip_actionedit" />
-				<script>
-					function onValueChanged()
-						local bEditMode = (getValue() == 1);
-						
-						window.label_mode.setVisible(not bEditMode);
-						window.spellmode.setVisible(not bEditMode);
-						if bEditMode then
-							DB.setValue(window.getDatabaseNode(), "spellmode", "string", "standard");
-						end
-						window.others.subwindow.update();
-					end
-				</script>
-			</button_iedit>
+			<button_spell_edit name="spells_iedit" />
 			<button_spell_add name="spellclass_iadd" />
 		</sheetdata>
 	</windowclass>
