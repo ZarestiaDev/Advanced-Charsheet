@@ -14,21 +14,14 @@ function onModeChanged()
 end
 
 function updateSpellCounters()
-	if spells then
-		for _,v in pairs(spells.subwindow.spellclasslist.getWindows()) do
-			v.onSpellCounterUpdate();
-		end
-	end
-	if weapons then
+	local sWindow = getControls()[1].getName();
+
+	if sWindow == "weapons" then
 		weapons.subwindow.weaponlist.onModeChanged();
 	end
-	if items then
-		for _,v in pairs(items.subwindow.spellclasslist.getWindows()) do
-			v.onSpellCounterUpdate();
-		end
-	end
-	if others then
-		for _,v in pairs(others.subwindow.spellclasslist.getWindows()) do
+
+	if self[sWindow] then
+		for _,v in pairs(self[sWindow].subwindow.spellclasslist.getWindows()) do
 			v.onSpellCounterUpdate();
 		end
 	end
@@ -38,28 +31,17 @@ function updateDisplayMode()
 	local nodeChar = getDatabaseNode();
 	local sSpellMode = DB.getValue(nodeChar, "spelldisplaymode", "");
 
-	if sSpellMode ~= "action" then
-		DB.setValue(nodeChar, "spelldisplaymode", "string", "action");
+	if sSpellMode == "action" then
+		return;
+	end
+	
+	DB.setValue(nodeChar, "spelldisplaymode", "string", "action");
 
-		if spells and spells.subwindow then
-			for _,v in pairs(spells.subwindow.spellclasslist.getWindows()) do
-				v.onDisplayChanged();
-			end
-		end
-		if weapons and weapons.subwindow then
-			for _,v in pairs(weapons.subwindow.spellclasslist.getWindows()) do
-				v.onDisplayChanged();
-			end
-		end
-		if items and items.subwindow then
-			for _,v in pairs(items.subwindow.spellclasslist.getWindows()) do
-				v.onDisplayChanged();
-			end
-		end
-		if others and others.subwindow then
-			for _,v in pairs(others.subwindow.spellclasslist.getWindows()) do
-				v.onDisplayChanged();
-			end
+	local sWindow = getControls()[1].getName();
+	
+	if self[sWindow] and self[sWindow].subwindow then
+		for _,v in pairs(self[sWindow].subwindow.spellclasslist.getWindows()) do
+			v.onDisplayChanged();
 		end
 	end
 end
@@ -67,18 +49,10 @@ end
 function onWinnowingPursuits()
 	if CompManagerAC.EXTENSIONS["WinnowingPursuits"] then
 		local nBottomOffset = -50;
+		local sWindow = getControls()[1].getName();
 
-		if spells then
-			spells.setAnchor("bottom", "", "bottom", "", nBottomOffset);
-		end
-		if weapons then
-			weapons.setAnchor("bottom", "", "bottom", "", nBottomOffset);
-		end
-		if items then
-			items.setAnchor("bottom", "", "bottom", "", nBottomOffset);
-		end
-		if others then
-			others.setAnchor("bottom", "", "bottom", "", nBottomOffset);
+		if self[sWindow] then
+			self[sWindow].setAnchor("bottom", "", "bottom", "", nBottomOffset);
 		end
 	end
 end
