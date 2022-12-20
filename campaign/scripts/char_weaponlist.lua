@@ -17,7 +17,7 @@ end
 
 function onModeChanged()
 	if not minisheet then
-		local bPrepMode = (DB.getValue(window.getDatabaseNode(), "weaponmode", "") == "preparation");
+		local bPrepMode = (DB.getValue(window.getDatabaseNode(), "spellmode", "") == "preparation");
 		for _,w in ipairs(getWindows()) do
 			w.carried.setVisible(bPrepMode);
 		end
@@ -55,10 +55,10 @@ function onFilter(w)
 			return false;
 		end
 	else
-		if (DB.getValue(window.getDatabaseNode(), "weaponmode", "") == "combat") and (w.carried.getValue() < 2) then
+		if (DB.getValue(window.getDatabaseNode(), "spellmode", "") == "combat") and (w.carried.getValue() < 2) then
 			return false;
 		end
-		if (DB.getValue(window.getDatabaseNode(), "weaponmode", "") == "") and (w.carried.getValue() < 2) then
+		if (DB.getValue(window.getDatabaseNode(), "spellmode", "") == "") and (w.carried.getValue() < 2) then
 			return false;
 		end
 	end

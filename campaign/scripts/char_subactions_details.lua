@@ -16,6 +16,10 @@ function onInit()
 	
 	if ActionsTab == "char_spells" then
 		DB.addHandler(DB.getPath(node, "spellset"), "onChildUpdate", updateAbility);
+	elseif ActionsTab == "char_weapons" then
+		registerMenuItem(Interface.getString("menu_addweapon"), "insert", 3);
+		DB.addHandler(DB.getPath(node, "weaponspellset"), "onChildUpdate", updateAbility);
+		DB.addHandler(DB.getPath(node, "weaponlist"), "onChildUpdate", updateAbility);
 	elseif ActionsTab == "char_items" then
 		DB.addHandler(DB.getPath(node, "itemspellset"), "onChildUpdate", updateAbility);
 	elseif ActionsTab == "char_others" then
@@ -29,6 +33,8 @@ function onClose()
 	
 	if ActionsTab == "char_spells" then
 		DB.removeHandler(DB.getPath(node, "spellset"), "onChildUpdate", updateAbility);
+	elseif ActionsTab == "char_weapons" then
+		DB.removeHandler(DB.getPath(node, "weaponspellset"), "onChildUpdate", updateAbility);
 	elseif ActionsTab == "char_items" then
 		DB.removeHandler(DB.getPath(node, "itemspellset"), "onChildUpdate", updateAbility);
 	elseif ActionsTab == "char_others" then
@@ -39,6 +45,8 @@ end
 function onMenuSelection(selection)
 	if selection == 5 then
 		addSpellClass();
+	elseif selection == 3 then
+		addWeapon();
 	end
 end
 
@@ -51,6 +59,14 @@ function addSpellClass()
 	end
 end
 
+function addWeapon()
+	local w = weaponlist.createWindow();
+	if w then
+		w.name.setFocus();
+		DB.setValue(getDatabaseNode(), "spellmode", "string", "preparation");
+	end
+end
+
 local bUpdateLock = false;
 function updateAbility()
 	if bUpdateLock then
@@ -60,11 +76,19 @@ function updateAbility()
 	for _,v in pairs(spellclasslist.getWindows()) do
 		v.onStatUpdate();
 	end
+	if weaponlist then
+		for _,v in pairs(weaponlist.getWindows()) do
+			v.onDataChanged();
+		end
+	end
 	bUpdateLock = false;
 end
 
 function update()
 	spellclasslist.update();
+	if weaponlist then
+		weaponlist.update();
+	end
 end
 
 function getEditMode()

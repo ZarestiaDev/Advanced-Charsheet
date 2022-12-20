@@ -30,7 +30,7 @@ function addWeapon()
 	local w = weaponlist.createWindow();
 	if w then
 		w.name.setFocus();
-		DB.setValue(getDatabaseNode(), "weaponmode", "string", "preparation");
+		DB.setValue(getDatabaseNode(), "spellmode", "string", "preparation");
 	end
 end
 
@@ -51,5 +51,5 @@ function update()
 end
 
 function getEditMode()
-	return (parentcontrol.window.weapons_iedit.getValue() == 1);
+	return (parentcontrol.window.spells_iedit.getValue() == 1);
 end
