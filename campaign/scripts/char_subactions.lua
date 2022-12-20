@@ -19,6 +19,9 @@ function updateSpellCounters()
 			v.onSpellCounterUpdate();
 		end
 	end
+	if weapons then
+		weapons.subwindow.weaponlist.onModeChanged();
+	end
 	if items then
 		for _,v in pairs(items.subwindow.spellclasslist.getWindows()) do
 			v.onSpellCounterUpdate();
@@ -43,6 +46,11 @@ function updateDisplayMode()
 				v.onDisplayChanged();
 			end
 		end
+		if weapons and weapons.subwindow then
+			for _,v in pairs(weapons.subwindow.spellclasslist.getWindows()) do
+				v.onDisplayChanged();
+			end
+		end
 		if items and items.subwindow then
 			for _,v in pairs(items.subwindow.spellclasslist.getWindows()) do
 				v.onDisplayChanged();
@@ -57,13 +65,14 @@ function updateDisplayMode()
 end
 
 function onWinnowingPursuits()
-	local nBottomOffset = -2;
-
 	if CompManagerAC.EXTENSIONS["WinnowingPursuits"] then
-		nBottomOffset = -50;
+		local nBottomOffset = -50;
 
 		if spells then
 			spells.setAnchor("bottom", "", "bottom", "", nBottomOffset);
+		end
+		if weapons then
+			weapons.setAnchor("bottom", "", "bottom", "", nBottomOffset);
 		end
 		if items then
 			items.setAnchor("bottom", "", "bottom", "", nBottomOffset);

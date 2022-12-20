@@ -88,7 +88,7 @@
 	</windowclass>
 	
 	<windowclass name="char_spells">
-		<script file="campaign/scripts/char_spells.lua" />
+		<script file="campaign/scripts/char_subactions.lua" />
 		<sheetdata>		
 			<sub_actions_subwindow name="spells">
 				<class>char_spells_details</class>
@@ -181,7 +181,7 @@
 	</windowclass>
 	
 	<windowclass name="char_weapons">
-		<script file="campaign/scripts/char_weapons.lua" />
+		<script file="campaign/scripts/char_subactions.lua" />
 		<sheetdata>
 			<sub_actions_subwindow name="weapons">
 				<class>char_weapons_details</class>
@@ -308,7 +308,7 @@
 	</windowclass>
 	
 	<windowclass name="char_items">
-		<script file="campaign/scripts/char_spells.lua" />
+		<script file="campaign/scripts/char_subactions.lua" />
 		<sheetdata>		
 			<sub_actions_subwindow name="items">
 				<class>char_items_details</class>
@@ -391,7 +391,7 @@
 	</windowclass>
 
 	<windowclass name="char_others">
-		<script file="campaign/scripts/char_spells.lua" />
+		<script file="campaign/scripts/char_subactions.lua" />
 		<sheetdata>
 			<sub_actions_subwindow name="others">
 				<class>char_others_details</class>
