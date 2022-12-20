@@ -123,14 +123,7 @@
 	<windowclass name="char_spells_details">
 		<script file="campaign/scripts/char_spells_details.lua" />
 		<sheetdata>
-			<genericcontrol name="dropcatcher">
-				<anchored position="over" />
-				<script>
-					function onDrop(x, y, draginfo)
-						return CharManager.onActionDrop(draginfo, window.getDatabaseNode());
-					end
-				</script>
-			</genericcontrol>
+			<drop_spell name="dropcatcher" />
 
 			<list_spellclass name="spellclasslist">
 				<anchored>
@@ -296,14 +289,7 @@
 	<windowclass name="char_items_details">
 		<script file="campaign/scripts/char_spells_details.lua" />
 		<sheetdata>
-			<genericcontrol name="dropcatcher">
-				<anchored position="over" />
-				<script>
-					function onDrop(x, y, draginfo)
-						return CharManager.onActionDrop(draginfo, window.getDatabaseNode());
-					end
-				</script>
-			</genericcontrol>
+			<drop_spell name="dropcatcher" />
 
 			<list_spellclass name="spellclasslist">
 				<anchored>
@@ -343,14 +329,7 @@
 	<windowclass name="char_others_details">
 		<script file="campaign/scripts/char_spells_details.lua" />
 		<sheetdata>
-			<genericcontrol name="dropcatcher">
-				<anchored position="over" />
-				<script>
-					function onDrop(x, y, draginfo)
-						return CharManager.onActionDrop(draginfo, window.getDatabaseNode());
-					end
-				</script>
-			</genericcontrol>
+			<drop_spell name="dropcatcher" />
 
 			<list_spellclass name="spellclasslist">
 				<anchored>

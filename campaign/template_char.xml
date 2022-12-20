@@ -130,6 +130,17 @@
 		</button_iedit>
 	</template>
 
+	<template name="drop_spell">
+		<genericcontrol>
+			<anchored position="over" />
+			<script>
+				function onDrop(x, y, draginfo)
+					return CharManager.onActionDrop(draginfo, window.getDatabaseNode());
+				end
+			</script>
+		</genericcontrol>
+	</template>
+
 	<!-- Size, offset, and minor anchoring changes -->
 	<template name="number_charabilityscore">
 		<basicnumber>
