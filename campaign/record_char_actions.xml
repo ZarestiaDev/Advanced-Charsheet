@@ -131,16 +131,7 @@
 					end
 				</script>
 			</button_iedit>
-			<buttoncontrol name="spellclass_iadd">
-				<anchored to="spells_iedit" position="lefthigh" offset="5,0" width="20" height="20" />
-				<icon normal="button_star" pressed="button_star_down" />
-				<tooltip textres="char_tooltip_actionaddspellclass" />
-				<script>
-					function onButtonPress()
-						window.spells.subwindow.addSpellClass();
-					end
-				</script>
-			</buttoncontrol>
+			<button_spell_add name="spellclass_iadd" />
 		</sheetdata>
 	</windowclass>
 
@@ -328,16 +319,7 @@
 					end
 				</script>
 			</button_iedit>
-			<buttoncontrol name="spellclass_iadd">
-				<anchored to="spells_iedit" position="lefthigh" offset="5,0" width="20" height="20" />
-				<icon normal="button_star" pressed="button_star_down" />
-				<tooltip textres="char_tooltip_actionaddspellclass" />
-				<script>
-					function onButtonPress()
-						window.items.subwindow.addSpellClass();
-					end
-				</script>
-			</buttoncontrol>
+			<button_spell_add name="spellclass_iadd" />
 		</sheetdata>
 	</windowclass>
 	
@@ -399,16 +381,7 @@
 					end
 				</script>
 			</button_iedit>
-			<buttoncontrol name="spellclass_iadd">
-				<anchored to="spells_iedit" position="lefthigh" offset="5,0" width="20" height="20" />
-				<icon normal="button_star" pressed="button_star_down" />
-				<tooltip textres="char_tooltip_actionaddspellclass" />
-				<script>
-					function onButtonPress()
-						window.others.subwindow.addSpellClass();
-					end
-				</script>
-			</buttoncontrol>
+			<button_spell_add name="spellclass_iadd" />
 		</sheetdata>
 	</windowclass>
 

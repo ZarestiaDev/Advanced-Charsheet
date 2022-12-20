@@ -96,6 +96,20 @@
 		</button_stringcycler>
 	</template>
 
+	<template name="button_spell_add">
+		<buttoncontrol>
+			<anchored to="spells_iedit" position="lefthigh" offset="5,0" width="20" height="20" />
+			<icon normal="button_star" pressed="button_star_down" />
+			<tooltip textres="char_tooltip_actionaddspellclass" />
+			<script>
+				function onButtonPress()
+					local nodeWindow = window.getControls()[1].getName();
+					window[nodeWindow].subwindow.addSpellClass();
+				end
+			</script>
+		</buttoncontrol>
+	</template>
+
 	<!-- Size, offset, and minor anchoring changes -->
 	<template name="number_charabilityscore">
 		<basicnumber>
