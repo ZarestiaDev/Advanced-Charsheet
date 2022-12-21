@@ -172,7 +172,7 @@
 	<windowclass name="char_weapons_details">
 		<script file="campaign/scripts/char_subactions_details.lua" />
 		<sheetdata>
-			<spell_drop name="dropcatcher" />
+			<drop_spell name="dropcatcher" />
 			
 			<genericcontrol name="icon_weapon">
 				<anchored position="insidetopleft" offset="10,10" width="20" height="20" />
