@@ -121,9 +121,6 @@
 					
 					window.label_mode.setVisible(not bEditMode);
 					window.spellmode.setVisible(not bEditMode);
-					if bEditMode then
-						DB.setValue(window.getDatabaseNode(), "spellmode", "string", "standard");
-					end
 					window[nodeWindow].subwindow.update();
 				end
 			</script>
