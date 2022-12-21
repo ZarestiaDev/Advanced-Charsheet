@@ -5,7 +5,7 @@
 
 local resetSpellsOriginal;
 local resetPreparedOriginal;
-local tSpellsets = { "spellset", "itemspellset", "otherspellset" };
+local tSpellsets = { "spellset", "weaponspellset", "itemspellset", "otherspellset" };
 
 function onInit()
     -- check first if we want to rather use Kelrugem's SpellManager implementation
