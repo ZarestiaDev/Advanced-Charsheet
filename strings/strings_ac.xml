@@ -19,6 +19,11 @@
 	<string name="char_label_immunities">Immunities</string>
 	<string name="char_label_specialqualities">Other Special Qualities</string>
 
+	<string name="char_label_heropoint">HP</string>
+	<string name="char_label_heropoint_tooltip">Hero Points</string>
+	<string name="char_label_useheropoint_tooltip">Use Hero Point</string>
+	<string name="char_message_usedheropoint">Use 1 Hero Point.</string>
+
 	<string name="char_label_itemslot">Slot</string>
 	<string name="char_hp_current_label">Current</string>
 	<string name="char_hp_nonlethal_label">Subdual</string>
@@ -37,6 +42,8 @@
 	<string name="tracker_swift">Swift</string>
 	<string name="tracker_reset">Reset</string>
 
-	<string name="option_label_ACCI">Advanced Charsheet: Show Class Identifier</string>
-	<string name="option_label_ACAT">Advanced Charsheet: Show Action Tracker</string>
+	<string name="option_header_ac">Advanced Charsheet</string>
+	<string name="option_label_ACCI">Class Identifier</string>
+	<string name="option_label_ACAT">Action Tracker</string>
+	<string name="option_label_ACHP">Hero Points</string>
 </root>

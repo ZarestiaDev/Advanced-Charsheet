@@ -7,11 +7,13 @@ function onInit()
 	onLevelChanged();
 	DB.addHandler(DB.getPath(getDatabaseNode(), "classes"), "onChildUpdate", onLevelChanged);
 
+	OptionsManager.registerCallback("ACHP", onHeroPoints);
 	onHeroPoints();
 end
 
 function onClose()
 	DB.removeHandler(DB.getPath(getDatabaseNode(), "classes"), "onChildUpdate", onLevelChanged);
+	OptionsManager.unregisterCallback("ACHP", onHeroPoints);
 end
 
 function onLevelChanged()
@@ -29,8 +31,23 @@ function onDrop(x, y, draginfo)
 end
 
 function onHeroPoints()
-    if CompManagerAC.EXTENSIONS["HeroPoints"] then
-		name.resetAnchor("right");
-		name.setAnchoredWidth(150);
-    end
+    if CompManagerAC.RULESET == "3.5E" then
+		return;
+	end
+
+	local bVisible = false;
+	local nOffset = 0;
+
+	if OptionsManager.getOption("ACHP") == "on" then
+		bVisible = true;
+		nOffset = -50;
+	else
+		bVisible = false;
+		nOffset = 0;
+	end
+
+	heropointframe.setVisible(bVisible);
+	heropoint.setVisible(bVisible);
+	heropoint_label.setVisible(bVisible);
+	classframe.setAnchor("right", "", "right", "", nOffset);
 end
