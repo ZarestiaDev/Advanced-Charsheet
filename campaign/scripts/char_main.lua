@@ -88,7 +88,6 @@ end
 
 function onMaladyTracker()
 	if CompManagerAC.EXTENSIONS["FG-PFRPG-Malady-Tracker"] then
-		pc_diseases.setAnchor("top", "", "top", "", 25);
 		pc_diseases.setAnchor("left", "leftanchor", "right", "relative", 5);
 	end
 end
