@@ -189,7 +189,7 @@
 					end
 				</script>
 			</number_dropadd>
-			<button_chardetails name="button_health">
+			<button_details name="button_health">
 				<anchored>
 					<top offset="26" />
 					<left parent="leftanchor" anchor="right" relation="relative" offset="10" />
@@ -200,7 +200,7 @@
 					end
 				</script>
 				<invisible />
-			</button_chardetails>
+			</button_details>
 
 			<label_fieldtop name="nonlethal_label">
 				<anchored to="nonlethal" />

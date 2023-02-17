@@ -6,21 +6,7 @@
 -->
 
 <root>
-	<!-- adds more width for saveview -->
-	<template name="spell_action_saveview">
-		<string_spellactionview name="saveview">
-			<anchored to="saveviewlabel" position="righthigh" offset="7,0" width="104" />
-			<subroll>save</subroll>
-		</string_spellactionview>
-	</template>
-	
-	<template name="spell_action_attackview">
-		<string_spellactionview name="attackview">
-			<anchored to="attackviewlabel" position="righthigh" offset="7,0" width="104" />
-			<subroll>atk</subroll>
-		</string_spellactionview>
-	</template>
-	
+	<!-- increase width for dc misc -->
 	<windowclass name="spell_class" merge="join">
 		<sheetdata>
 			<number_spell name="dcmisc" source="dc.misc">

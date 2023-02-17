@@ -6,8 +6,7 @@
 function onInit()
 	registerMenuItem(Interface.getString("menu_addspellclass"), "insert", 5);
 	
-	updateAbility();
-	update();
+	self.updateAbility();
 
 	local node = getDatabaseNode();
 	ActionsTab = parentcontrol.window.getClass();
@@ -43,10 +42,10 @@ function onClose()
 end
 
 function onMenuSelection(selection)
-	if selection == 5 then
-		addSpellClass();
-	elseif selection == 3 then
-		addWeapon();
+	if selection == 3 then
+		self.addWeapon();
+	elseif selection == 5 then
+		self.addSpellClass();
 	end
 end
 
@@ -63,7 +62,6 @@ function addWeapon()
 	local w = weaponlist.createWindow();
 	if w then
 		w.name.setFocus();
-		DB.setValue(getDatabaseNode(), "spellmode", "string", "preparation");
 	end
 end
 
@@ -82,15 +80,4 @@ function updateAbility()
 		end
 	end
 	bUpdateLock = false;
-end
-
-function update()
-	spellclasslist.update();
-	if weaponlist then
-		weaponlist.update();
-	end
-end
-
-function getEditMode()
-	return (parentcontrol.window.spells_iedit.getValue() == 1);
 end

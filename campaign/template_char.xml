@@ -16,13 +16,7 @@
 		<buttoncontrol>
 			<anchored width="20" height="20" />
 			<icon normal="button_add" pressed="button_add_down" />
-		</buttoncontrol>
-	</template>
-
-	<template name="button_chardetails">
-		<buttoncontrol>
-			<anchored width="20" height="20" />
-			<state icon="button_details" pressed="button_details_down" />
+			<tooltip textres="button_add" />
 		</buttoncontrol>
 	</template>
 
@@ -98,7 +92,7 @@
 
 	<template name="button_spell_add">
 		<buttoncontrol>
-			<anchored to="spells_iedit" position="lefthigh" offset="5,0" width="20" height="20" />
+			<anchored to="actions_iedit" position="lefthigh" offset="5,0" width="20" height="20" />
 			<icon normal="button_star" pressed="button_star_down" />
 			<tooltip textres="char_tooltip_actionaddspellclass" />
 			<script>
@@ -114,16 +108,6 @@
 		<button_iedit>
 			<anchored position="insidebottomright" offset="25,15" />
 			<tooltip textres="char_tooltip_actionedit" />
-			<script>
-				function onValueChanged()
-					local bEditMode = (getValue() == 1);
-					local nodeWindow = window.getControls()[1].getName();
-					
-					window.label_mode.setVisible(not bEditMode);
-					window.spellmode.setVisible(not bEditMode);
-					window[nodeWindow].subwindow.update();
-				end
-			</script>
 		</button_iedit>
 	</template>
 

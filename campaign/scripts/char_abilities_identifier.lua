@@ -1,15 +1,14 @@
 function onFirstLayout()
     OptionsManager.registerCallback("ACCI", stateChanged);
-
     stateChanged();
 
-    DB.addHandler(DB.getPath(getDatabaseNode().getChild("...."), "classes"), "onChildUpdate", stateChanged);
+    DB.addHandler(DB.getPath(DB.getChild(getDatabaseNode(), "...."), "classes"), "onChildUpdate", stateChanged);
 end
 
 function onClose()
     OptionsManager.unregisterCallback("ACCI", stateChanged);
 
-	DB.removeHandler(DB.getPath(getDatabaseNode().getChild("...."), "classes"), "onChildUpdate", stateChanged);
+	DB.removeHandler(DB.getPath(DB.getChild(getDatabaseNode(), "...."), "classes"), "onChildUpdate", stateChanged);
 end
 
 function stateChanged()
@@ -23,8 +22,8 @@ function stateChanged()
 end
 
 function getClasses(nodeChar)
-    local rActor = nodeChar.getChild("...");
-    local nClasses = DB.getChildCount(rActor.getChild("classes"));
+    local rActor = DB.getChild(nodeChar, "...");
+    local nClasses = DB.getChildCount(DB.getChild(rActor, "classes"));
     
     return nClasses;
 end

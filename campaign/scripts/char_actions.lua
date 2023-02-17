@@ -1,6 +1,5 @@
 function onInit()
     OptionsManager.registerCallback("ACAT", stateChanged);
-
     stateChanged();
 
 	toggleTabButton("subspells_button");
@@ -38,9 +37,8 @@ end
 
 function stateChanged()
     local bVisible;
-    local nTopActionFrame;
+    local nTopActionFrame, nTopActionSub;
 	local nBottomActionFrame = -2;
-    local nTopActionSub;
 	local sParent = "";
 	local sAnchor = "top";
 

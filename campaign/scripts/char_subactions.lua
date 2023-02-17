@@ -10,7 +10,7 @@ function onInit()
 end
 
 function onModeChanged()
-	updateSpellCounters();
+	self.updateSpellCounters();
 end
 
 function updateSpellCounters()
@@ -27,6 +27,13 @@ function updateSpellCounters()
 	end
 end
 
+function onEditModeChanged()
+	local bEditMode = WindowManager.getEditMode(self, "actions_iedit");
+
+	label_mode.setVisible(not bEditMode);
+	spellmode.setVisible(not bEditMode);
+end
+
 function updateDisplayMode()
 	local nodeChar = getDatabaseNode();
 	local sSpellMode = DB.getValue(nodeChar, "spelldisplaymode", "");
@@ -38,7 +45,6 @@ function updateDisplayMode()
 	DB.setValue(nodeChar, "spelldisplaymode", "string", "action");
 
 	local sWindow = getControls()[1].getName();
-	
 	if self[sWindow] and self[sWindow].subwindow then
 		for _,v in pairs(self[sWindow].subwindow.spellclasslist.getWindows()) do
 			v.onDisplayChanged();
