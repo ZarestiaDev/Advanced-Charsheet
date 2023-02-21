@@ -66,21 +66,27 @@ function stateChanged()
 		subothers.setAnchor("bottom", "", "", "", nBottomActionFrame);
 	end
 
-    setTracker(bVisible, nTopActionFrame, nBottomActionFrame, nTopActionSub, sParent, sAnchor);
+	setActionFrame(nTopActionFrame, nBottomActionFrame);
+	setTrackerVisiblity(bVisible);
+	setSubwindows(nTopActionSub, sParent, sAnchor);
 end
 
-function setTracker(bVisible, nTopActionFrame, nBottomActionFrame, nTopActionSub, sParent, sAnchor)
-    actionframe.setStaticBounds(15,nTopActionFrame,-29,nBottomActionFrame);
+function setActionFrame(nTopActionFrame, nBottomActionFrame)
+	actionframe.setStaticBounds(15, nTopActionFrame, -29, nBottomActionFrame);
+end
 
-    subspells.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
-    subweapons.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
-    subitems.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
-    subothers.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
-
-    label_actiontracker.setVisible(bVisible);
+function setTrackerVisiblity(bVisible)
+	label_actiontracker.setVisible(bVisible);
 	standard.setVisible(bVisible);
 	move.setVisible(bVisible);
 	fullround.setVisible(bVisible);
 	swift.setVisible(bVisible);
 	reset.setVisible(bVisible);
+end
+
+function setSubwindows(nTopActionSub, sParent, sAnchor)
+    subspells.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
+    subweapons.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
+    subitems.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
+    subothers.setAnchor("top", sParent, sAnchor, "", nTopActionSub);
 end
