@@ -51,7 +51,11 @@
 		<includefile source="campaign/record_char_notes.xml" />
 		<!-- Size and offset adjustments -->
 		<includefile source="campaign/record_spell_entry.xml" />
-		
+	
+	<!-- Desktop -->
+		<!-- For desktop portraits -->
+		<includefile source="desktop/template_desktop.xml" />
+
 	<!-- Graphics -->
 		<!-- For portraits -->
 		<includefile source="graphics/graphics_portraits.xml" />
