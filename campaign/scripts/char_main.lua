@@ -62,10 +62,10 @@ end
 
 function onDrainPermanentBonus()
 	if CompManagerAC.EXTENSIONS["FG-PFRPG-Drain-and-Permanent-Bonuses"] then
-		abilityframe.setStaticBounds(15,0,245,244);
-		hpframe.setStaticBounds(261,0,-29,180);
-		initframe.setStaticBounds(261,180,71,64);
-		acframe.setStaticBounds(332,180,-29,64);
+		abilityframe.setStaticBounds(0,0,245,244);
+		hpframe.setStaticBounds(246,0,-1,180);
+		initframe.setStaticBounds(246,180,71,64);
+		acframe.setStaticBounds(317,180,-1,64);
 
 		strength_label.setValue(Interface.getString("str"));
 		dexterity_label.setValue(Interface.getString("dex"));

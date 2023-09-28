@@ -24,7 +24,7 @@
 		<genericcontrol>
 			<anchored width="85" height="20">
 				<top offset="5" />
-				<left parent="leftanchor" anchor="right" relation="relative" offset="15" />
+				<left parent="leftanchor" anchor="right" relation="relative" offset="10" />
 			</anchored>
 			<frame name="fielddark" offset="7,5,7,5" hidereadonly="true" />
 			<stateframe>
@@ -56,8 +56,8 @@
 			<anchored>
 				<top offset="35" />
 				<bottom offset="-2" />
-				<left offset="10" />
-				<right offset="-25" />
+				<left offset="0" />
+				<right offset="-1" />
 			</anchored>
 			<activate />
 			<fastinit />
@@ -243,7 +243,10 @@
 	</template>
 	<template name="sub_charsheet">
 		<subwindow>
-			<bounds>0,175,-1,-20</bounds>
+			<anchored position="insidetopleft" offset="15,175">
+				<right offset="-30" />
+				<bottom offset="-20" />
+			</anchored>
 		</subwindow>
 	</template>
 </root>

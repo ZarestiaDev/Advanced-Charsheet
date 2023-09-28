@@ -10,27 +10,27 @@
 		<script file="campaign/scripts/char_combat.lua" />
         <sheetdata>
 			<frame_char name="acframe">
-				<bounds>15,0,550,210</bounds>
+				<bounds>0,0,550,210</bounds>
 			</frame_char>
 
             <frame_char name="saveframe">
-				<bounds>15,210,380,120</bounds>
+				<bounds>0,210,380,120</bounds>
 			</frame_char>
 
             <frame_char name="attackframe">
-				<bounds>15,330,380,150</bounds>
+				<bounds>0,330,380,150</bounds>
 			</frame_char>
 
             <frame_char name="srframe">
-				<bounds>395,210,130,90</bounds>
+				<bounds>380,210,130,90</bounds>
 			</frame_char>
 
             <frame_char name="speedframe">
-				<bounds>395,300,130,90</bounds>
+				<bounds>380,300,130,90</bounds>
 			</frame_char>
 
             <frame_char name="initiativeframe">
-				<bounds>395,390,130,90</bounds>
+				<bounds>380,390,130,90</bounds>
 			</frame_char>
         </sheetdata>
     </windowclass>

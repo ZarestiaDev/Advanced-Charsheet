@@ -18,13 +18,13 @@
 			<string_labeled name="deity" merge="delete" />
 			
 			<frame_char name="appearanceframe">
-				<bounds>15,0,-189,190</bounds>
+				<bounds>0,0,-189,190</bounds>
 			</frame_char>
 			<frame_char name="languageframe">
-				<bounds>-189,0,160,190</bounds>
+				<bounds>-189,0,188,190</bounds>
 			</frame_char>
 			<frame_char name="notesframe">
-				<bounds>15,190,-29,-2</bounds>
+				<bounds>0,190,-1,-2</bounds>
 			</frame_char>
 		</sheetdata>
 	</windowclass>

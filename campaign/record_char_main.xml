@@ -11,7 +11,7 @@
 		<sheetdata>
 			<!-- Abilities -->
 			<frame_char name="abilityframe">
-				<bounds>15,0,220,244</bounds>
+				<bounds>0,0,220,244</bounds>
 			</frame_char>
 
 			<number_charabilityscore name="strength" source="abilities.strength.score">
@@ -131,7 +131,7 @@
 
 			<!-- Health -->
 			<frame_char name="hpframe">
-				<bounds>236,0,-29,180</bounds>
+				<bounds>221,0,-1,180</bounds>
 			</frame_char>
 
 			<genericcontrol name="leftanchor">
@@ -245,7 +245,7 @@
 
 			<!-- Armor Class -->
 			<frame_char name="acframe">
-				<bounds>307,180,-29,64</bounds>
+				<bounds>292,180,-1,64</bounds>
 			</frame_char>
 
 			<number_chartotalac name="ac" source="ac.totals.general">
@@ -279,7 +279,7 @@
 			</label_fieldtop>
 
 			<frame_char name="initframe">
-				<bounds>236,180,71,64</bounds>
+				<bounds>221,180,71,64</bounds>
 			</frame_char>
 			<number_charinit name="initiative" source="initiative.total">
 				<anchored to="initframe" position="insidetopleft" offset="17,25" width="36" height="24" />
@@ -291,7 +291,7 @@
 
 			<!-- Speed -->
 			<frame_char name="speedframe">
-				<bounds>307,244,-29,64</bounds>
+				<bounds>292,244,-1,64</bounds>
 			</frame_char>
 
 			<number_charspeed name="speedfinal" source="speed.final">
@@ -312,7 +312,7 @@
 
 			<!-- Senses -->
 			<frame_char name="sensesframe">
-				<bounds>307,308,-29,64</bounds>
+				<bounds>292,308,-1,64</bounds>
 			</frame_char>
 			<genericcontrol name="anchor_charmainskill">
 				<anchored to="sensesframe" position="insidetopleft" offset="0,27" width="0" height="20" />
@@ -359,7 +359,7 @@
 
 			<!-- Attacks -->
 			<frame_char name="combatframe">
-				<bounds>15,244,220,64</bounds>
+				<bounds>0,244,220,64</bounds>
 			</frame_char>
 
 			<label name="atk">
@@ -390,7 +390,7 @@
 			</label_fieldtop>
 
 			<frame_char name="babframe">
-				<bounds>236,244,71,64</bounds>
+				<bounds>221,244,71,64</bounds>
 			</frame_char>
 			<basicnumber name="baseattackbonus" source="attackbonus.base">
 				<anchored to="babframe" position="insidetopleft" offset="17,25" width="36" height="24" />
@@ -403,7 +403,7 @@
 
 			<!-- Saves -->
 			<frame_char name="saveframe">
-				<bounds>15,308,220,64</bounds>
+				<bounds>0,308,220,64</bounds>
 			</frame_char>
 
 			<label name="save">
@@ -434,7 +434,7 @@
 			</label_fieldtop>
 
 			<frame_char name="srframe">
-				<bounds>236,308,71,64</bounds>
+				<bounds>221,308,71,64</bounds>
 			</frame_char>
 			<number_charsr name="spellresistance" source="defenses.sr.total">
 				<anchored to="srframe" position="insidetopleft" offset="17,25" width="36" height="24" />
@@ -446,7 +446,7 @@
 			
 			<!-- Notes -->
 			<frame_char name="noteframe">
-				<bounds>15,372,-29,-6</bounds>
+				<bounds>0,372,-1,-6</bounds>
 			</frame_char>
 			<label name="char_notes_label">
 				<anchored to="noteframe" position="insidetopleft" offset="14,15" />

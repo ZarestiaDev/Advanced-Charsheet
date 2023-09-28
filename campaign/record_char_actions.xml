@@ -10,7 +10,7 @@
 		<script file="campaign/scripts/char_actions.lua" />
 		<sheetdata>
 			<frame_char name="actionframe">
-				<bounds>15,28,-29,-2</bounds>
+				<bounds>0,28,-1,-2</bounds>
 			</frame_char>
 			
 			<!-- Add dummy control for Attack Modifiers insertbefore -->

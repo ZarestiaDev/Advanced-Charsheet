@@ -72,7 +72,7 @@ function stateChanged()
 end
 
 function setActionFrame(nTopActionFrame, nBottomActionFrame)
-	actionframe.setStaticBounds(15, nTopActionFrame, -29, nBottomActionFrame);
+	actionframe.setStaticBounds(0, nTopActionFrame, -1, nBottomActionFrame);
 end
 
 function setTrackerVisiblity(bVisible)
