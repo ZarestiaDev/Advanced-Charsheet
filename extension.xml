@@ -3,7 +3,7 @@
 <root version="3.3" >
 	<properties>
 		<name>Feature: Advanced Charsheet</name>
-		<version>1.6</version>
+		<version>1.7</version>
 		<loadorder>28</loadorder>
 		<description>
 			<text>Revisited Character Sheet</text>
@@ -26,7 +26,7 @@
 		- LiveHP: 60
 	-->
 
-	<announcement text="3.5E/PFRPG Advanced Charsheet - v1.6 by Zarestia" font="emotefont" />
+	<announcement text="3.5E/PFRPG Advanced Charsheet - v1.7 by Zarestia" font="emotefont" />
 
 	<base>
 	<!-- High-Level Scripts -->
@@ -51,6 +51,9 @@
 		<includefile source="campaign/record_char_notes.xml" />
 		<!-- Size and offset adjustments -->
 		<includefile source="campaign/record_spell_entry.xml" />
+
+	<!-- Desktop -->
+		<includefile source="desktop/template_desktop.xml" />
 	
 	<!-- Graphics -->
 		<!-- For portraits -->
