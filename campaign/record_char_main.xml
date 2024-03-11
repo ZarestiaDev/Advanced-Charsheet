@@ -494,4 +494,24 @@
 			</label>
 		</sheetdata>
 	</windowclass>
+
+	<windowclass name="charsheet_class" merge="join">
+		<sheetdata>
+			<string_textlistitem name="name" insertafter="rightanchor">
+				<anchored>
+					<top parent="rightanchor" offset="0" />
+					<left offset="50" />
+					<right parent="level" anchor="left" relation="relative" offset="-10" />
+				</anchored>
+			</string_textlistitem>
+
+			<button_lvlup name="levelup">
+				<anchored>
+					<top parent="rightanchor" offset="0" />
+					<left offset="5" />
+				</anchored>
+				<state textres="button_levelup" />
+			</button_lvlup>
+		</sheetdata>
+	</windowclass>
 </root>

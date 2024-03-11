@@ -51,6 +51,13 @@
 		</button_text>
 	</template>
 
+	<template name="button_lvlup">
+		<button_text>
+			<anchored width="40" height="20" />
+			<script file="campaign/scripts/char_lvlup.lua" />
+		</button_text>
+	</template>
+
 	<template name="actions_subwindow">
 		<subwindow>
 			<anchored>

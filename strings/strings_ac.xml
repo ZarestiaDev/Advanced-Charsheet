@@ -42,6 +42,8 @@
 	<string name="tracker_swift">Swift</string>
 	<string name="tracker_reset">Reset</string>
 
+	<string name="button_levelup">LVLUP</string>
+
 	<string name="option_header_ac">Advanced Charsheet</string>
 	<string name="option_label_ACCI">Class Identifier</string>
 	<string name="option_label_ACAT">Action Tracker</string>
