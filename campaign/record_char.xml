@@ -17,39 +17,13 @@
         </sizelimits>
 	</windowclass>
 
-	<windowclass name="charsheet_overview">
+	<windowclass name="charsheet_overview" merge="join">
 		<script file="campaign/scripts/char_overview.lua" />
 		<sheetdata>
 			<!-- Portrait -->
-			<genericcontrol name="portraitbase">
-				<anchored position="insidetopleft" offset="3,3" width="148" height="148" />
-				<icon>charlist_base</icon>
-				<disabled />
-			</genericcontrol>
-			<portrait_char name="portrait">
-				<anchored position="insidetopleft" offset="3,3" width="148" height="148" />
-			</portrait_char>
+			<picture_charsheet name="portrait" />
 
-			<genericcontrol name="rightanchor">
-				<anchored position="insidetopright" offset="0,0" width="0" height="0" />
-				<disabled />
-			</genericcontrol>
-
-			<!-- Token -->
-			<token_char name="token">
-				<anchored to="rightanchor" width="47" height="47">
-					<top offset="46" />
-					<right anchor="left" relation="relative" offset="-4" />
-				</anchored>
-			</token_char>
-
-			<!-- Speak -->
-			<button_charactivate name="speak">
-				<anchored to="rightanchor" width="23" height="22">
-					<top offset="4" />
-					<right anchor="left" relation="relative" offset="32" />
-				</anchored>
-			</button_charactivate>
+			<button_charactivate_charsheet name="speak" />
 			
 			<!-- Text Information -->
 			<frame_char name="overviewframe">
@@ -59,7 +33,7 @@
 					<right anchor="left" relation="relative" offset="-5"  />
 				</anchored>
 			</frame_char>
-			<string_labeled name="name">
+			<string_labeled name="name" merge="replace">
 				<anchored to="overviewframe" position="insidetopleft" offset="14,15" width="150" height="20" />
 				<labelres>char_label_name</labelres>
 			</string_labeled>

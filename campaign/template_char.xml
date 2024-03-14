@@ -248,12 +248,25 @@
 			<class>charsheet_overview</class>
 		</subwindow>
 	</template>
-	<template name="sub_charsheet">
-		<subwindow>
-			<anchored position="insidetopleft" offset="15,175">
-				<right offset="-30" />
-				<bottom offset="-20" />
+
+	<template name="picture_charsheet">
+		<genericcontrol>
+			<anchored to="leftanchor" width="45" height="45">
+				<top offset="55" />
+				<left relation="relative" offset="5" postoffset="5" />
 			</anchored>
-		</subwindow>
+			<script file="campaign/scripts/picture_charsheet.lua" />
+			<portraitsize>148</portraitsize>
+			<widgetsize>45</widgetsize>
+		</genericcontrol>
+	</template>
+
+	<template name="button_charactivate_charsheet">
+		<button_charactivate>
+			<anchored width="23" height="22">
+				<top offset="16" />
+				<left parent="portrait" anchor="right" offset="-34" />
+			</anchored>
+		</button_charactivate>
 	</template>
 </root>
