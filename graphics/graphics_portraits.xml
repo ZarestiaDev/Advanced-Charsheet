@@ -7,20 +7,20 @@
 
 <root>
 	<!-- Portrait Chat icons -->	
-	<icon name="portraitchat_base" file="graphics/portraits/portrait_chat.png" />
-	<icon name="portraitchat_mask" file="graphics/portraits/portrait_chat_mask.png" />
+	<icon name="portraitchat_base_ac" file="graphics/portraits/portrait_chat.png" />
+	<icon name="portraitchat_mask_ac" file="graphics/portraits/portrait_chat_mask.png" />
 	
 	<!-- Other portrait options -->
-	<icon name="charlist_base" file="graphics/portraits/portrait.png" />
-	<icon name="charlist_mask" file="graphics/portraits/portrait_mask.png" />
+	<icon name="charlist_base_ac" file="graphics/portraits/portrait.png" />
+	<icon name="charlist_mask_ac" file="graphics/portraits/portrait_mask.png" />
 
 	<portraitset name="charlist">
-		<base>charlist_base</base>
-		<mask>charlist_mask</mask>
+		<base>charlist_base_ac</base>
+		<mask>charlist_mask_ac</mask>
 	</portraitset>
 
 	<portraitset name="chat">
-		<base>portraitchat_base</base>
-		<mask>portraitchat_mask</mask>
+		<base>portraitchat_base_ac</base>
+		<mask>portraitchat_mask_ac</mask>
 	</portraitset>
 </root>

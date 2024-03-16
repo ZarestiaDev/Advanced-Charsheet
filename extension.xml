@@ -4,7 +4,7 @@
 	<properties>
 		<name>Feature: Advanced Charsheet</name>
 		<version>1.7</version>
-		<loadorder>68</loadorder>
+		<loadorder>28</loadorder>
 		<description>
 			<text>Revisited Character Sheet</text>
 			<author>Zarestia</author>
