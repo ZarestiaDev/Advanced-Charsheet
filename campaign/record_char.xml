@@ -21,7 +21,13 @@
 		<script file="campaign/scripts/char_overview.lua" />
 		<sheetdata>
 			<!-- Portrait -->
-			<picture_charsheet name="portrait" />
+			<picture_charsheet name="portrait">
+				<anchored>
+					<top offset="55" />
+				</anchored>
+				<portraitsize>148</portraitsize>
+				<widgetsize>45</widgetsize>
+			</picture_charsheet>
 
 			<button_charactivate_charsheet name="speak" />
 			

@@ -249,18 +249,6 @@
 		</subwindow>
 	</template>
 
-	<template name="picture_charsheet">
-		<genericcontrol>
-			<anchored to="leftanchor" width="45" height="45">
-				<top offset="55" />
-				<left relation="relative" offset="5" postoffset="5" />
-			</anchored>
-			<script file="campaign/scripts/picture_charsheet.lua" />
-			<portraitsize>148</portraitsize>
-			<widgetsize>45</widgetsize>
-		</genericcontrol>
-	</template>
-
 	<template name="button_charactivate_charsheet">
 		<button_charactivate>
 			<anchored width="23" height="22">
