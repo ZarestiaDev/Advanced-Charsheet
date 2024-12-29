@@ -240,7 +240,7 @@
 	</template>
 
 	 <!-- Change height to compensate portrait changes -->
-	 <template name="sub_charsheet_overview">
+	<template name="sub_charsheet_overview">
 		<subwindow>
 			<bounds>15,20,-30,162</bounds>
 			<activate />

@@ -3,7 +3,8 @@ function onInit()
         super.onInit();
     end
 
-    onExtraActions();
+    --onExtraActions();
+    --paused until ExtraAcions itself gets fixed/updated
 end
 
 function onExtraActions()
