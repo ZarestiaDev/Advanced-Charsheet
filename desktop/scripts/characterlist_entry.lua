@@ -3,34 +3,6 @@
 -- attribution and copyright information.
 --
 
-CHARLIST_NAME_WIDGET_POSITION = "bottom";
-CHARLIST_NAME_WIDGET_X = 0;
-CHARLIST_NAME_WIDGET_Y = -12;
-CHARLIST_NAME_WIDGET_W = 90;
-CHARLIST_NAME_WIDGET_FONT = "mini_name";
-CHARLIST_NAME_WIDGET_FONT_CURRENT = "mini_name_selected";
-CHARLIST_NAME_WIDGET_FRAME = "mini_name";
-CHARLIST_NAME_WIDGET_FRAME_OFFSET = "5,2,5,2";
-
-CHARLIST_COLOR_WIDGET_POSITION = "topleft";
-CHARLIST_COLOR_WIDGET_X = 10;
-CHARLIST_COLOR_WIDGET_Y = 10;
-CHARLIST_COLOR_WIDGET_W = 20;
-CHARLIST_COLOR_WIDGET_H = 20;
-
-CHARLIST_STATE_WIDGET_POSITION = "topleft";
-CHARLIST_STATE_WIDGET_X = 23;
-CHARLIST_STATE_WIDGET_Y = 22;
-
-function onHoverUpdate(x, y)
-	if ((x >= CHARLIST_COLOR_WIDGET_X - CHARLIST_COLOR_WIDGET_W / 2) and (x <= CHARLIST_COLOR_WIDGET_X + CHARLIST_COLOR_WIDGET_W / 2)) and
-			((y >= CHARLIST_COLOR_WIDGET_Y - CHARLIST_COLOR_WIDGET_H / 2) and (y <= CHARLIST_COLOR_WIDGET_Y + CHARLIST_COLOR_WIDGET_H / 2)) then
-		setTooltipText(self.getUserTooltip());
-	else
-		setTooltipText("");
-	end
-end
-
 --
 --	INITIALIZATION AND HELPERS
 --
@@ -115,23 +87,28 @@ function updateDisplay()
 end
 
 function updatePortraitWidget()
+	local sIdentity = CharacterListManager.convertPathToIdentity(self.getRecordPath());
 	local wgt = findWidget("portrait");
-	if not wgt then
-		local sIdentity = CharacterListManager.convertPathToIdentity(self.getRecordPath());
+	if wgt then
+		if not sIdentity then
+			wgt.destroy();
+			wgt = nil;
+		end
+	else
 		if sIdentity then
 			wgt = addBitmapWidget({ name = "portrait", icon = "portrait_" .. sIdentity .. "_charlist", });
-		else
-			wgt = addBitmapWidget({ name = "portrait", icon = "charlist_base", });
+			-- Change by Zarestia to set the portait size
+			wgt.setSize(CharacterListManager.PORTRAIT_SIZE, CharacterListManager.PORTRAIT_SIZE);
 		end
 	end
-	-- Zarestia adding resizing
-	wgt.setSize(CharacterListManager.PORTRAIT_SIZE, CharacterListManager.PORTRAIT_SIZE);
-	-- End
-	local sUser = _tData and _tData.sUser;
-	if (sUser or "") == "" then
-		wgt.setColor("80FFFFFF");
-	else
-		wgt.setColor(nil);
+
+	if wgt then
+		local sUser = _tData and _tData.sUser;
+		if (sUser or "") == "" then
+			wgt.setColor("80FFFFFF");
+		else
+			wgt.setColor(nil);
+		end
 	end
 end
 function updateNameWidget()
@@ -143,16 +120,18 @@ function updateNameWidget()
 	if not wgt then
 		wgt = addTextWidget({
 			name = "name",
-			font = CHARLIST_NAME_WIDGET_FONT, text = "",
-			frame = CHARLIST_NAME_WIDGET_FRAME, frameoffset = CHARLIST_NAME_WIDGET_FRAME_OFFSET,
-			position = CHARLIST_NAME_WIDGET_POSITION, x = CHARLIST_NAME_WIDGET_X, y = CHARLIST_NAME_WIDGET_Y, w = CHARLIST_NAME_WIDGET_W,
+			font = CharacterListManager.CHARLIST_NAME_WIDGET_FONT, text = "",
+			frame = CharacterListManager.CHARLIST_NAME_WIDGET_FRAME, frameoffset = CharacterListManager.CHARLIST_NAME_WIDGET_FRAME_OFFSET,
+			position = CharacterListManager.CHARLIST_NAME_WIDGET_POSITION, 
+			x = CharacterListManager.CHARLIST_NAME_WIDGET_X, y = CharacterListManager.CHARLIST_NAME_WIDGET_Y, 
+			w = CharacterListManager.CHARLIST_NAME_WIDGET_W,
 		});
 	end
 
 	if sUser and not sName then
 		wgt.setText(sUser);
 		wgt.setTooltipText(sUser);
-		wgt.setFont(CHARLIST_NAME_WIDGET_FONT_CURRENT);
+		wgt.setFont(CharacterListManager.CHARLIST_NAME_WIDGET_FONT_CURRENT);
 	else
 		if (sName or "") == "" then
 			sName = Interface.getString("library_recordtype_empty_charsheet");
@@ -161,21 +140,10 @@ function updateNameWidget()
 		wgt.setTooltipText(sName);
 
 		if bCurrent then
-			wgt.setFont(CHARLIST_NAME_WIDGET_FONT_CURRENT);
+			wgt.setFont(CharacterListManager.CHARLIST_NAME_WIDGET_FONT_CURRENT);
 		else
-			wgt.setFont(CHARLIST_NAME_WIDGET_FONT);
+			wgt.setFont(CharacterListManager.CHARLIST_NAME_WIDGET_FONT);
 		end
-	end
-end
-local _sUserTooltip = nil;
-function getUserTooltip()
-	return _sUserTooltip or "";
-end
-function setUserTooltip(sUser)
-	if (sUser or "") == "" then
-		_sUserTooltip = nil;
-	else
-		_sUserTooltip = string.format("%s: %s", Interface.getString("charlist_tooltip_user"), sUser);
 	end
 end
 function updateColorWidget()
@@ -189,29 +157,30 @@ function updateColorWidget()
 			wgtBase = addBitmapWidget({ 
 				name="colorbase", 
 				icon = "colorgizmo_bigbtn_base", 
-				position = CHARLIST_COLOR_WIDGET_POSITION, x = CHARLIST_COLOR_WIDGET_X, y = CHARLIST_COLOR_WIDGET_Y,
-				w = CHARLIST_COLOR_WIDGET_W, h = CHARLIST_COLOR_WIDGET_H, 
+				position = CharacterListManager.CHARLIST_COLOR_WIDGET_POSITION, 
+				x = CharacterListManager.CHARLIST_COLOR_WIDGET_X, y = CharacterListManager.CHARLIST_COLOR_WIDGET_Y,
+				w = CharacterListManager.CHARLIST_COLOR_WIDGET_W, h = CharacterListManager.CHARLIST_COLOR_WIDGET_H, 
 			});
 		end
 		if not wgtColor then
 			wgtColor = addBitmapWidget({ 
 				name="color", 
 				icon = "colorgizmo_bigbtn_color", 
-				position = CHARLIST_COLOR_WIDGET_POSITION, x = CHARLIST_COLOR_WIDGET_X, y = CHARLIST_COLOR_WIDGET_Y,
-				w = CHARLIST_COLOR_WIDGET_W, h = CHARLIST_COLOR_WIDGET_H, 
+				position = CharacterListManager.CHARLIST_COLOR_WIDGET_POSITION, 
+				x = CharacterListManager.CHARLIST_COLOR_WIDGET_X, y = CharacterListManager.CHARLIST_COLOR_WIDGET_Y,
+				w = CharacterListManager.CHARLIST_COLOR_WIDGET_W, h = CharacterListManager.CHARLIST_COLOR_WIDGET_H, 
 			});
 		end
 		if not wgtEffect then
 			wgtEffect = addBitmapWidget({ 
 				name="coloreffect", 
 				icon = "colorgizmo_bigbtn_effects", 
-				position = CHARLIST_COLOR_WIDGET_POSITION, x = CHARLIST_COLOR_WIDGET_X, y = CHARLIST_COLOR_WIDGET_Y,
-				w = CHARLIST_COLOR_WIDGET_W, h = CHARLIST_COLOR_WIDGET_H, 
+				position = CharacterListManager.CHARLIST_COLOR_WIDGET_POSITION, 
+				x = CharacterListManager.CHARLIST_COLOR_WIDGET_X, y = CharacterListManager.CHARLIST_COLOR_WIDGET_Y,
+				w = CharacterListManager.CHARLIST_COLOR_WIDGET_W, h = CharacterListManager.CHARLIST_COLOR_WIDGET_H, 
 			});
 		end
 		wgtColor.setColor(sColor);
-
-		self.setUserTooltip(_tData and _tData.sUser);
 	else
 		if wgtBase then
 			wgtBase.destroy();
@@ -222,8 +191,6 @@ function updateColorWidget()
 		if wgtEffect then
 			wgtEffect.destroy();
 		end
-
-		self.setUserTooltip();
 	end
 end
 function updateStateWidget()
@@ -242,7 +209,8 @@ function updateStateWidget()
 		if not wgt then
 			wgt = addBitmapWidget({
 				name="state", 
-				position=CHARLIST_STATE_WIDGET_POSITION, x = CHARLIST_STATE_WIDGET_X, y = CHARLIST_STATE_WIDGET_Y, 
+				position = CharacterListManager.CHARLIST_STATE_WIDGET_POSITION, 
+				x = CharacterListManager.CHARLIST_STATE_WIDGET_X, y = CharacterListManager.CHARLIST_STATE_WIDGET_Y, 
 			});
 		end
 		wgt.setBitmap(sBitmap);
@@ -324,7 +292,7 @@ function onDoubleClick(x, y)
 end
 function onDragStart(button, x, y, draginfo)
 	if self.isActiveAndOwned() then
-		return AssetRecordManager.handlePictureDragStart(self.getRecordPath(), draginfo);
+		return RecordAssetManager.handlePictureDragStart(self.getRecordPath(), draginfo);
 	end
 end
 function onDrop(x, y, draginfo)
@@ -355,11 +323,10 @@ function bringCharacterToTop()
 	Interface.openWindow(ActorManager.getRecordType(rActor), ActorManager.getCreatureNodeName(rActor));
 end
 
---
---	DEPRECATED
---
+-- DEPRECATED - 2023-12-12 (Long Release) - 2024-05-28 (Chat Notice)
 
 function getIdentityPath()
 	Debug.console("characterlist_entry.lua:getIdentityPath - DEPRECATED - 2023-12-12 - Use characterlist_entry.lua:getRecordPath");
+	ChatManager.SystemMessage("characterlist_entry.lua:getIdentityPath - DEPRECATED - 2023-12-12 - Contact ruleset/extension/forge author");
 	return self.getRecordPath();
 end

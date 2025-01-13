@@ -9,6 +9,7 @@
 	<template name="characterlist_entry">
 		<genericcontrol>
 			<anchored position="insidetopleft" />
+			<icon>charlist_base</icon>
 			<script file="desktop/scripts/characterlist_entry.lua" />
 		</genericcontrol>
 	</template>
