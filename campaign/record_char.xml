@@ -7,7 +7,6 @@
 
 <root>
 	<windowclass name="charsheet" merge="join">
-		<script file="campaign/scripts/char.lua" />
 		<placement>
 			<size width="585" height="760" />
 		</placement>
