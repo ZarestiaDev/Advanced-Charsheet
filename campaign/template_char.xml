@@ -45,7 +45,7 @@
 
 	<template name="button_tracker">
 		<button_text>
-			<anchored position="righthigh" offset="10,0" width="60" height="20" />
+			<anchored position="righthigh" offset="10,0" width="80" height="20" />
 			<script file="campaign/scripts/char_actions_tracker.lua" />
 			<invisible />
 		</button_text>
