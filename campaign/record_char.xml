@@ -8,10 +8,10 @@
 <root>
 	<windowclass name="charsheet" merge="join">
 		<placement>
-			<size width="585" height="760" />
+			<size width="595" height="760" />
 		</placement>
 		<sizelimits>
-            <minimum width="585" height="760" />
+            <minimum width="595" height="760" />
 			<dynamic />
         </sizelimits>
 	</windowclass>
@@ -20,26 +20,17 @@
 		<script file="campaign/scripts/char_overview.lua" />
 		<sheetdata>
 			<!-- Portrait -->
-			<picture_charsheet name="portrait">
-				<anchored>
-					<top offset="55" />
-				</anchored>
+			<picture_charsheetv2 name="portrait">
+				<anchored width="148" height="148" />
 				<portraitsize>148</portraitsize>
 				<widgetsize>45</widgetsize>
-			</picture_charsheet>
-
-			<button_charactivate_charsheet name="speak" />
+			</picture_charsheetv2>
 			
-			<!-- Text Information -->
-			<frame_char name="overviewframe">
-				<anchored to="rightanchor" height="97">
-					<top />
-					<left parent="portrait" anchor="right" offset="5" />
-					<right anchor="left" relation="relative" offset="-5"  />
-				</anchored>
-			</frame_char>
 			<string_labeled name="name" merge="replace">
-				<anchored to="overviewframe" position="insidetopleft" offset="14,15" width="150" height="20" />
+				<anchored to="rightanchor" height="30" width="160">
+					<top offset="5" />
+					<left parent="leftanchor" relation="current" offset="5" />
+				</anchored>
 				<labelres>char_label_name</labelres>
 			</string_labeled>
 			<string_main_secondary name="gender">
@@ -67,15 +58,15 @@
 				<labelres>char_label_alignment</labelres>
 			</string_main_secondary>
 			<string_main_secondary name="deity">
-				<anchored to="alignment" width="85" />
+				<anchored to="alignment" width="95" />
 				<labelres>char_label_deity</labelres>
 			</string_main_secondary>
 
 			<!-- Race -->
 			<frame_char name="raceframe">
-				<anchored height="57" width="161">
-					<top parent="overviewframe" anchor="bottom" offset="0,3" />
-					<left parent="portrait" anchor="right" offset="5" />
+				<anchored to="rightanchor" height="57" width="161">
+					<top parent="contentanchor" anchor="bottom" offset="100" />
+					<left parent="leftanchor" relation="relative" offset="-55" />
 				</anchored>
 			</frame_char>
 			<button_iadd_creation name="race_add">
@@ -115,10 +106,10 @@
 
 			<!-- Class / Level -->
 			<frame_char name="classframe">
-				<anchored height="57">
-					<top parent="overviewframe" anchor="bottom" offset="0,1" />
-					<left parent="raceframe" anchor="right" offset="1,0" />
-					<right />
+				<anchored to="rightanchor" height="57" >
+					<top parent="contentanchor" anchor="bottom" offset="100" />
+					<right/>
+					<left parent="leftanchor" relation="relative" />
 				</anchored>
 			</frame_char>
 			<stringc_charclasslevel name="classlevel">
@@ -142,7 +133,7 @@
 			<!-- Hero Points (Optional) -->
 			<frame_char name="heropointframe">
 				<anchored height="57">
-					<top parent="overviewframe" anchor="bottom" />
+					<top parent="contentanchor" anchor="bottom" offset="100" />
 					<left parent="classframe" anchor="right" />
 					<right />
 				</anchored>

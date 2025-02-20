@@ -49,5 +49,5 @@ function onHeroPoints()
 	heropointframe.setVisible(bVisible);
 	heropoint.setVisible(bVisible);
 	heropoint_label.setVisible(bVisible);
-	classframe.setAnchor("right", "", "right", "", nOffset);
+	classframe.setAnchor("rightanchor", "", "right", "", nOffset);
 end
