@@ -114,8 +114,6 @@
 				<static textres="spell_label_mode" />
 			</label>
 			<action_mode name="spellmode" />
-
-			<button_spell_edit name="actions_iedit" />
 			<button_spell_add name="spellclass_iadd" />
 		</sheetdata>
 	</windowclass>
@@ -153,8 +151,6 @@
 				<static textres="spell_label_mode" />
 			</label>
 			<action_mode name="spellmode" />
-			
-			<button_spell_edit name="actions_iedit" />
 			<button_spell_add name="spellclass_iadd" />
 			<buttoncontrol name="weapon_iadd">
 				<anchored to="spellclass_iadd" position="lefthigh" offset="5,0" width="20" height="20" />
@@ -224,8 +220,6 @@
 				<static textres="spell_label_mode" />
 			</label>
 			<action_mode name="spellmode" />
-			
-			<button_spell_edit name="actions_iedit" />
 			<button_spell_add name="spellclass_iadd" />
 		</sheetdata>
 	</windowclass>
@@ -264,8 +258,6 @@
 				<static textres="spell_label_mode" />
 			</label>
 			<action_mode name="spellmode" />
-			
-			<button_spell_edit name="actions_iedit" />
 			<button_spell_add name="spellclass_iadd" />
 		</sheetdata>
 	</windowclass>

@@ -27,13 +27,6 @@ function updateSpellCounters()
 	end
 end
 
-function onEditModeChanged()
-	local bEditMode = WindowManager.getEditMode(self, "actions_iedit");
-
-	label_mode.setVisible(not bEditMode);
-	spellmode.setVisible(not bEditMode);
-end
-
 function updateDisplayMode()
 	local nodeChar = getDatabaseNode();
 	local sSpellMode = DB.getValue(nodeChar, "spelldisplaymode", "");

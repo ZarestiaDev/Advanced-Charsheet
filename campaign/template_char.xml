@@ -99,7 +99,7 @@
 
 	<template name="button_spell_add">
 		<buttoncontrol>
-			<anchored to="actions_iedit" position="lefthigh" offset="5,0" width="20" height="20" />
+			<anchored position="insidebottomright" offset="12,12" width="20" height="20" />
 			<icon normal="button_star" pressed="button_star_down" />
 			<tooltip textres="char_tooltip_actionaddspellclass" />
 			<script>
@@ -109,13 +109,6 @@
 				end
 			</script>
 		</buttoncontrol>
-	</template>
-
-	<template name="button_spell_edit">
-		<button_iedit>
-			<anchored position="insidebottomright" offset="25,15" />
-			<tooltip textres="char_tooltip_actionedit" />
-		</button_iedit>
 	</template>
 
 	<template name="drop_spell">
