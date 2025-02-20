@@ -185,35 +185,9 @@
 				<center />
 			</label>
 
-			<label>
-				<anchored position="insidetopleft" offset="10,45" />
-				<center />
-				<static textres="char_label_weaponname" />
-			</label>
-			<label>
-				<anchored position="insidetopright" offset="326,45" width="29" />
-				<center />
-				<static textres="char_label_weapontype" />
-			</label>
-			<label>
-				<anchored position="insidetopright" offset="293,45" width="30" />
-				<center />
-				<static textres="char_label_weaponnumatt" />
-			</label>
-			<label>
-				<anchored position="insidetopright" offset="158,45" width="130"/>
-				<center />
-				<static textres="char_label_weaponattacks" />
-			</label>
-			<label>
-				<anchored position="insidetopright" offset="51,45" width="100" />
-				<center />
-				<static textres="char_label_weapondamage" />
-			</label>
-			
 			<list_charweapon name="weaponlist">
 				<anchored>
-					<top offset="60" />
+					<top offset="40" />
 					<left />
 					<right />
 				</anchored>

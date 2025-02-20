@@ -230,14 +230,6 @@
 			</script>
 		</number_chartotal>
 	</template>
-	
-	<template name="list_charweapon">
-		<windowlist>
-			<datasource>.weaponlist</datasource>
-			<sortby><control>name</control></sortby>
-			<script file="campaign/scripts/char_weaponlist.lua" />
-		</windowlist>
-	</template>
 
 	 <!-- Change height to compensate portrait changes -->
 	<template name="sub_charsheet_overview">
