@@ -3,7 +3,7 @@
 <root version="3.3" >
 	<properties>
 		<name>Feature: Advanced Charsheet</name>
-		<version>1.9</version>
+		<version>1.10</version>
 		<loadorder>28</loadorder>
 		<description>
 			<text>Revisited Character Sheet</text>
@@ -25,7 +25,7 @@
 		- LiveHP: 60
 	-->
 
-	<announcement text="3.5E/PFRPG Advanced Charsheet - v1.9 by Zarestia" font="emotefont" />
+	<announcement text="3.5E/PFRPG Advanced Charsheet - v1.10 by Zarestia" font="emotefont" />
 
 	<base>
 	<!-- High-Level Scripts -->
