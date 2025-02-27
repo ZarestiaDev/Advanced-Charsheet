@@ -3,25 +3,25 @@
 <root>
 	<windowclass name="charsheet_inventory" merge="join">
 		<sheetdata>
-			<label name="slot_label" insertbefore="location_label">
-				<anchored to="rightanchor" width="70">
-					<top />
-					<right anchor="left" relation="relative" offset="-10" />
+			<label_list_content_string_noframe_right name="label_location">
+				<anchored>
+					<right offset="-20" />
 				</anchored>
-				<center/>
+			</label_list_content_string_noframe_right>
+			<label_list_content_string_noframe_right name="slot_label" insertbefore="label_location">
+				<anchored>
+					<right offset="20" />
+				</anchored>
 				<static textres="char_label_itemslot" />
-			</label>
+			</label_list_content_string_noframe_right>
 		</sheetdata>
 	</windowclass>
 	
 	<windowclass name="char_invitem" merge="join">
 		<sheetdata>
-			<stringu name="slot" insertbefore="location">
-				<anchored width="70" height="20">
-					<top offset="2" />
-					<right parent="rightanchor" anchor="left" relation="relative" offset="-10" />
-				</anchored>
-			</stringu>
+			<string_listitem_right name="slot" insertbefore="location">
+				<anchored width="70" />
+			</string_listitem_right>
 		</sheetdata>
 	</windowclass>
 </root>
