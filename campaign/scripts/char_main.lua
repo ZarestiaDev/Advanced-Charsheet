@@ -119,6 +119,12 @@ function onDrainPermanentBonus()
 		hpframe.setStaticBounds(246,0,-1,180);
 		initframe.setStaticBounds(246,180,71,64);
 		acframe.setStaticBounds(317,180,-1,64);
+		combatframe.setStaticBounds(0,244,245,64);
+		saveframe.setStaticBounds(0,308,245,64);
+		babframe.setStaticBounds(246,244,71,64);
+		srframe.setStaticBounds(246,308,71,64);
+		sensesframe.setStaticBounds(317,308,-1,64);
+		speedframe.setStaticBounds(317,244,-1,64);
 
 		strength_label.setValue(Interface.getString("str"));
 		dexterity_label.setValue(Interface.getString("dex"));
@@ -135,7 +141,7 @@ function onDrainPermanentBonus()
 		charisma_label.setAnchoredWidth(70);
 
 		strength.setAnchor("left", "", "left", "", 64);
-		speedfinal.setAnchor("left", "ac", "left", "", -30)
+		-- speedfinal.setAnchor("left", "ac", "left", "", -30)
 	end
 end
 
