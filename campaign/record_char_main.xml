@@ -234,11 +234,11 @@
 				<anchored to="dr" position="below" offset="0,9" height="20" />
 				<labelres>char_label_resistances</labelres>
 			</string_labeled>
-			<string_labeled name="immunities" source="defenses.immunities">
+			<string_labeled name="immunities1" source="defenses.immunities">
 				<anchored to="resistances" position="below" offset="0,9" height="20" />
 				<labelres>char_label_immunities</labelres>
 			</string_labeled>
-			<string_labeled name="immunities" source="defenses.specialqualities">
+			<string_labeled name="immunities2" source="defenses.specialqualities">
 				<anchored to="immunities" position="below" offset="0,9" height="20" />
 				<labelres>char_label_specialqualities</labelres>
 			</string_labeled>
