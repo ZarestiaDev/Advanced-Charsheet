@@ -8,10 +8,10 @@
 <root>
 	<windowclass name="charsheet" merge="join">
 		<placement>
-			<size width="595" height="760" />
+			<size width="615" height="760" />
 		</placement>
 		<sizelimits>
-            <minimum width="595" height="760" />
+            <minimum width="615" height="760" />
 			<dynamic />
         </sizelimits>
 	</windowclass>
