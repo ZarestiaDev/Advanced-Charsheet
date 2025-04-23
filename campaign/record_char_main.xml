@@ -239,7 +239,7 @@
 				<labelres>char_label_immunities</labelres>
 			</string_labeled>
 			<string_labeled name="immunities2" source="defenses.specialqualities">
-				<anchored to="immunities" position="below" offset="0,9" height="20" />
+				<anchored to="immunities1" position="below" offset="0,9" height="20" />
 				<labelres>char_label_specialqualities</labelres>
 			</string_labeled>
 
@@ -471,36 +471,13 @@
 			</scrollbar>
 		</sheetdata>
 	</windowclass>
-	
-	<windowclass name="charsheet_classes" merge="join">
-		<sheetdata>
-			<label name="classskillranksused_label">
-				<anchored to="labelanchor" width="33">
-					<top />
-					<right anchor="left" relation="relative" offset="-9" />
-				</anchored>
-			</label>
-			<label name="classskillrankstotal_label">
-				<anchored to="labelanchor" width="33">
-					<top />
-					<right anchor="left" relation="relative" offset="-7" />
-				</anchored>
-			</label>
-			<label name="classlevel_label">
-				<anchored to="labelanchor" width="34">
-					<top />
-					<right anchor="left" relation="relative" offset="-7" />
-				</anchored>
-			</label>
-		</sheetdata>
-	</windowclass>
 
 	<windowclass name="charsheet_class" merge="join">
 		<sheetdata>
 			<string_textlistitem name="name" insertafter="rightanchor">
 				<anchored>
 					<top parent="rightanchor" offset="0" />
-					<left offset="50" />
+					<left offset="25" />
 					<right parent="level" anchor="left" relation="relative" offset="-10" />
 				</anchored>
 			</string_textlistitem>
@@ -508,7 +485,7 @@
 			<button_lvlup name="levelup">
 				<anchored>
 					<top parent="rightanchor" offset="0" />
-					<left offset="5" />
+					<left offset="2" />
 				</anchored>
 				<state textres="button_levelup" />
 			</button_lvlup>
