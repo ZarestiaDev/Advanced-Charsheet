@@ -8,7 +8,7 @@
 <root>
 	<template name="string_main_secondary">
 		<string_labeled>
-			<anchored position="right" offset="10,0" />
+			<anchored position="right" offset="10" />
 		</string_labeled>
 	</template>
 

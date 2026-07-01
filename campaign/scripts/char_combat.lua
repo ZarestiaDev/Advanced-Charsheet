@@ -8,6 +8,11 @@ function onInit()
         super.onInit();
     end
 
+    
+    if CompManagerAC.EXTENSIONS["AdvancedEffects"] then
+        char_combat_ae.setAnchor("top", "attackframe", "bottom", 0, 0);
+    end
+
     onSystemChanged();
 end
 

@@ -3,7 +3,7 @@
 <root version="3.3" >
 	<properties>
 		<name>Feature: Advanced Charsheet</name>
-		<version>1.11</version>
+		<version>1.12</version>
 		<loadorder>28</loadorder>
 		<description>
 			<text>Revisited Character Sheet</text>
